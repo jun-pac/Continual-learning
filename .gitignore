@@ -1,0 +1,6 @@
+.pkl
+.pyc
+.pt
+*cpython-38.pyc*
+data/
+

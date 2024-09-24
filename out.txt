@@ -1,0 +1,86 @@
+Files already downloaded and verified
+Files already downloaded and verified
+Starting experiment...
+Current task number 0
+/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+annoy_index rebuild time : 7.7769
+0-th task, 0-th test set accuracy : 0.8980
+0-th task, 1-th test set accuracy : 0.0000
+0-th task, 2-th test set accuracy : 0.0000
+0-th task, 3-th test set accuracy : 0.0000
+0-th task, 4-th test set accuracy : 0.0000
+0-th task, 5-th test set accuracy : 0.0000
+0-th task, 6-th test set accuracy : 0.0000
+0-th task, 7-th test set accuracy : 0.0000
+0-th task, 8-th test set accuracy : 0.0000
+0-th task, 9-th test set accuracy : 0.0000
+Current task number 1
+annoy_index rebuild time : 8.0344
+1-th task, 0-th test set accuracy : 0.8400
+1-th task, 1-th test set accuracy : 0.7750
+1-th task, 2-th test set accuracy : 0.0000
+1-th task, 3-th test set accuracy : 0.0000
+1-th task, 4-th test set accuracy : 0.0000
+1-th task, 5-th test set accuracy : 0.0000
+1-th task, 6-th test set accuracy : 0.0000
+1-th task, 7-th test set accuracy : 0.0000
+1-th task, 8-th test set accuracy : 0.0000
+1-th task, 9-th test set accuracy : 0.0000
+Current task number 2
+annoy_index rebuild time : 8.0380
+2-th task, 0-th test set accuracy : 0.7780
+2-th task, 1-th test set accuracy : 0.7430
+2-th task, 2-th test set accuracy : 0.7620
+2-th task, 3-th test set accuracy : 0.0000
+2-th task, 4-th test set accuracy : 0.0000
+2-th task, 5-th test set accuracy : 0.0000
+2-th task, 6-th test set accuracy : 0.0000
+2-th task, 7-th test set accuracy : 0.0000
+2-th task, 8-th test set accuracy : 0.0000
+2-th task, 9-th test set accuracy : 0.0000
+Current task number 3
+annoy_index rebuild time : 7.8262
+3-th task, 0-th test set accuracy : 0.7560
+3-th task, 1-th test set accuracy : 0.6870
+3-th task, 2-th test set accuracy : 0.7390
+3-th task, 3-th test set accuracy : 0.7090
+3-th task, 4-th test set accuracy : 0.0000
+3-th task, 5-th test set accuracy : 0.0000
+3-th task, 6-th test set accuracy : 0.0000
+3-th task, 7-th test set accuracy : 0.0000
+3-th task, 8-th test set accuracy : 0.0000
+3-th task, 9-th test set accuracy : 0.0000
+Current task number 4
+annoy_index rebuild time : 7.9783
+4-th task, 0-th test set accuracy : 0.7460
+4-th task, 1-th test set accuracy : 0.6560
+4-th task, 2-th test set accuracy : 0.7220
+4-th task, 3-th test set accuracy : 0.6950
+4-th task, 4-th test set accuracy : 0.6720
+4-th task, 5-th test set accuracy : 0.0000
+4-th task, 6-th test set accuracy : 0.0000
+4-th task, 7-th test set accuracy : 0.0000
+4-th task, 8-th test set accuracy : 0.0000
+4-th task, 9-th test set accuracy : 0.0000
+Current task number 5
+annoy_index rebuild time : 7.9377
+5-th task, 0-th test set accuracy : 0.7120
+5-th task, 1-th test set accuracy : 0.6370
+5-th task, 2-th test set accuracy : 0.7040
+5-th task, 3-th test set accuracy : 0.6620
+5-th task, 4-th test set accuracy : 0.6480
+5-th task, 5-th test set accuracy : 0.6160
+5-th task, 6-th test set accuracy : 0.0000
+5-th task, 7-th test set accuracy : 0.0000
+5-th task, 8-th test set accuracy : 0.0000
+5-th task, 9-th test set accuracy : 0.0000
+Current task number 6
+annoy_index rebuild time : 7.9915
+6-th task, 0-th test set accuracy : 0.7070
+6-th task, 1-th test set accuracy : 0.6270
+6-th task, 2-th test set accuracy : 0.6950
+6-th task, 3-th test set accuracy : 0.6250
+6-th task, 4-th test set accuracy : 0.6300
