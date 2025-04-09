@@ -110,6 +110,7 @@ def main(args):
 
 
     t_init=time.time()
+    # 데이터셋을 label에 따라 10개의 subset으로 split하여 incremental learning에 쓸 수 있도록. 스플릿 된 indices들을 저장하고 나중에 꺼내서 쓴다. 
     if args.dataset=="CIFAR100":
         trainset=datasets.CIFAR100(root='./data', train=True, download=True, transform=ContrastiveLearningViewGenerator(get_simclr_pipeline_transform(args.in_size),2))
         trainset_original = datasets.CIFAR100(root='./data', train=True, download=True, transform=get_original_pipeline_transform(args.in_size))
@@ -225,7 +226,8 @@ def main(args):
     
 
 
-
+    # 다음의 두 함수는 학습된 feature extractor를 통해, train data에서 feature를 추출한다. 
+    # dataloader들의 list가 있는 경우 첫 번째 함수를 사용한다. (Annoy Index를 다시 만들 때 사용한다.)
     # Multiple dataloaders
     def extract_all_prev_features(dataloaders, model, num_tasks):
         features = []
@@ -266,22 +268,13 @@ def main(args):
         if(task==7):
             break
         if task+1 in [1,2,4,8]:
+            # Feature extractor의 Joing retraining이 발생
             print(f"Joint training begin in {task}th task")
             model = ResNetSimCLR(out_dim=args.out_dim, pretrained=args.pretrained)
             model = model.to(args.device)
 
             all_prev_dataset=ConcatDataset([train_loaders[i].dataset for i in range(task+1)])
             all_prev_trainloader=DataLoader(all_prev_dataset,batch_size=args.batch_size,shuffle=True,num_workers=2,pin_memory=True, drop_last=True)
-            # print(f"test: {type(all_prev_trainloader)}, {len(all_prev_trainloader.dataset)}")
-            # (img, label)=next(all_prev_trainloader)
-            # print(f"debug : {img}, {label}")
-            try:
-                iter(all_prev_trainloader).__next__()
-                print("Dataset iteration works!")
-            except NotImplementedError as e:
-                print("Iteration error:", e)
-            # for i, (img, label) in enumerate(all_prev_trainloader):
-            #     print(f"i, img, label; {i} {type(img)} {label}")
             optimizer = torch.optim.Adam(model.parameters(), args.lr, weight_decay=args.weight_decay)
             scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=len(all_prev_trainloader), eta_min=0, last_epoch=-1)
 
@@ -322,7 +315,10 @@ def main(args):
         # print()
 
 
-        print("Without projection head")
+        # Annoy Index build: Annoy Index (For KNN)은 원소를 incremental하게 추가할 수 없다. 
+        # Joint training이 아니라 일부 feature만 추가하는 경우에도 매번 다시 생성해야 함. 
+        # Feature도 Joint training여부와 상관없이 과거의 모든 데이터에 대해 다시 추출. (무시할 수 있을 정도로 짧은 시간 ~ 10sec)
+        print("Without projection head") # resnet의 마지막 projection head는 제거한 상태로 feature 추출
         resnet50_wo_head = model
         resnet50_wo_head.backbone.fc=nn.Identity()
         resnet50_wo_head.eval()
@@ -335,6 +331,8 @@ def main(args):
             annoy_index_wo_head.add_item(i,all_prev_train_features_wo_head[i])
         annoy_index_wo_head.build(args.annoy) 
         print(f"annoy_index rebuild time: {time.time()-t0:.4f}")
+        
+        # Test set evaluation. 모든 test set을 다 돌려본다.
         acc_list_wo_head=[]
         for j, testloader in enumerate(test_loaders):
             test_features, test_labels = extract_features(testloader, resnet50_wo_head)
