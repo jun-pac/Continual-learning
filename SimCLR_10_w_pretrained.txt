@@ -1,0 +1,2 @@
+usage: cifar100_KNN_simCLR.py [-h] [--cuda CUDA]
+cifar100_KNN_simCLR.py: error: unrecognized arguments: pretrained epochs 10

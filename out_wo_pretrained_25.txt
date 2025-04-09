@@ -1,0 +1,49 @@
+Files already downloaded and verified
+Files already downloaded and verified
+Starting experiment...
+Current task number: 0
+Joint training begin in 0th task
+/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+Traceback (most recent call last):
+  File "cifar100_KNN_exponential.py", line 249, in <module>
+    main(args)
+  File "cifar100_KNN_exponential.py", line 179, in main
+    outputs = model(inputs)
+  File "/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torchvision/models/resnet.py", line 273, in _forward_impl
+    x = self.layer1(x)
+  File "/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torch/nn/modules/container.py", line 219, in forward
+    input = module(input)
+  File "/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torchvision/models/resnet.py", line 158, in forward
+    identity = self.downsample(x)
+  File "/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torch/nn/modules/container.py", line 219, in forward
+    input = module(input)
+  File "/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torch/nn/modules/batchnorm.py", line 176, in forward
+    return F.batch_norm(
+  File "/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torch/nn/functional.py", line 2512, in batch_norm
+    return torch.batch_norm(
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.50 GiB. GPU 0 has a total capacity of 31.73 GiB of which 1.03 GiB is free. Process 233117 has 19.84 GiB memory in use. Including non-PyTorch memory, this process has 10.86 GiB memory in use. Of the allocated memory 10.47 GiB is allocated by PyTorch, and 26.20 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

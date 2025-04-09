@@ -1,6 +1,7 @@
-.pkl
-.pyc
-.pt
+*.pkl
+*.pyc
+*.pt
 *cpython-38.pyc*
-data/
-
+data
+*__pycache__
+runs

@@ -1,0 +1,98 @@
+Namespace(annoy=10000, arch='resnet50', batch_size=500, cuda=0, disable_cuda=False, distance='angular', epochs=5, fp16_precision=False, gpu_index=0, in_size=32, k=5, log_every_n_steps=100, lr=0.0003, n_views=2, out_dim=128, pretrained=True, seed=None, temperature=0.07, weight_decay=0.0001)
+Files already downloaded and verified
+Files already downloaded and verified
+Files already downloaded and verified
+Starting experiment...
+Current task number: 0
+Joint training begin in 0th task
+/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/users/PAS1289/oiocha/Persistent_Message_Passing/Continual/SimCLR/simclr.py:59: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=self.args.fp16_precision)
+0th train epoch finished ...8.0204sec
+/users/PAS1289/oiocha/Persistent_Message_Passing/Continual/SimCLR/simclr.py:75: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=self.args.fp16_precision):
+/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:1063: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  _warn_get_lr_called_within_step(self)
+1th train epoch finished ...7.1534sec
+2th train epoch finished ...6.9918sec
+3th train epoch finished ...7.0018sec
+4th train epoch finished ...7.1112sec
+Training has finished.
+Without projection head
+all_prev_train_features_wo_head.shape: (5000, 2048)
+annoy_index rebuild time: 20.3042
+0-th task, 0-th test set accuracy : 0.7760
+0-th task, 1-th test set accuracy : 0.0000
+0-th task, 2-th test set accuracy : 0.0000
+0-th task, 3-th test set accuracy : 0.0000
+0-th task, 4-th test set accuracy : 0.0000
+0-th task, 5-th test set accuracy : 0.0000
+0-th task, 6-th test set accuracy : 0.0000
+0-th task, 7-th test set accuracy : 0.0000
+0-th task, 8-th test set accuracy : 0.0000
+0-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 1
+Joint training begin in 1th task
+0th train epoch finished ...14.5038sec
+1th train epoch finished ...14.4427sec
+2th train epoch finished ...14.1819sec
+3th train epoch finished ...14.4782sec
+4th train epoch finished ...15.0094sec
+Training has finished.
+Without projection head
+all_prev_train_features_wo_head.shape: (10000, 2048)
+annoy_index rebuild time: 128.7774
+1-th task, 0-th test set accuracy : 0.6730
+1-th task, 1-th test set accuracy : 0.5790
+1-th task, 2-th test set accuracy : 0.0000
+1-th task, 3-th test set accuracy : 0.0000
+1-th task, 4-th test set accuracy : 0.0000
+1-th task, 5-th test set accuracy : 0.0000
+1-th task, 6-th test set accuracy : 0.0000
+1-th task, 7-th test set accuracy : 0.0000
+1-th task, 8-th test set accuracy : 0.0000
+1-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 2
+Without projection head
+all_prev_train_features_wo_head.shape: (15000, 2048)
+annoy_index rebuild time: 226.4922
+2-th task, 0-th test set accuracy : 0.6110
+2-th task, 1-th test set accuracy : 0.5450
+2-th task, 2-th test set accuracy : 0.5610
+2-th task, 3-th test set accuracy : 0.0000
+2-th task, 4-th test set accuracy : 0.0000
+2-th task, 5-th test set accuracy : 0.0000
+2-th task, 6-th test set accuracy : 0.0000
+2-th task, 7-th test set accuracy : 0.0000
+2-th task, 8-th test set accuracy : 0.0000
+2-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 3
+Joint training begin in 3th task
+0th train epoch finished ...27.2623sec
+1th train epoch finished ...26.9153sec
+2th train epoch finished ...27.7390sec
+3th train epoch finished ...30.2204sec
+4th train epoch finished ...38.8696sec
+Training has finished.
+Without projection head
+all_prev_train_features_wo_head.shape: (20000, 2048)
+annoy_index rebuild time: 342.7578
+3-th task, 0-th test set accuracy : 0.5770
+3-th task, 1-th test set accuracy : 0.4870
+3-th task, 2-th test set accuracy : 0.6100
+3-th task, 3-th test set accuracy : 0.4610
+3-th task, 4-th test set accuracy : 0.0000
+3-th task, 5-th test set accuracy : 0.0000
+3-th task, 6-th test set accuracy : 0.0000
+3-th task, 7-th test set accuracy : 0.0000
+3-th task, 8-th test set accuracy : 0.0000
+3-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 4
+Without projection head

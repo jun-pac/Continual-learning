@@ -1,0 +1,40 @@
+Namespace(annoy=1000, arch='resnet50', batch_size=500, cuda=0, dataset='ImageNet', disable_cuda=False, distance='angular', epochs=1, fp16_precision=False, gpu_index=0, in_size=32, k=10, log_every_n_steps=100, lr=0.0003, n_views=2, out_dim=128, pretrained=False, seed=None, temperature=0.07, weight_decay=0.0001)
+Total label count : 1000
+members count: 1281167
+Total label count : 1000
+members count: 1281167
+Total label count : 1000
+members count: 50000
+Train split sizes:
+Split 0: 129395
+Split 1: 125829
+Split 2: 128466
+Split 3: 129440
+Split 4: 129159
+Split 5: 127467
+Split 6: 127933
+Split 7: 127264
+Split 8: 127373
+Split 9: 128841
+Test split sizes:
+Split 0: 5000
+Split 1: 5000
+Split 2: 5000
+Split 3: 5000
+Split 4: 5000
+Split 5: 5000
+Split 6: 5000
+Split 7: 5000
+Split 8: 5000
+Split 9: 5000
+
+train_loaders: [<torch.utils.data.dataloader.DataLoader object at 0x2b2be82575e0>, <torch.utils.data.dataloader.DataLoader object at 0x2b2be82578b0>, <torch.utils.data.dataloader.DataLoader object at 0x2b2be8257bb0>, <torch.utils.data.dataloader.DataLoader object at 0x2b2be82fd220>, <torch.utils.data.dataloader.DataLoader object at 0x2b2be82fd550>, <torch.utils.data.dataloader.DataLoader object at 0x2b2be82fd370>, <torch.utils.data.dataloader.DataLoader object at 0x2b2be82fd700>, <torch.utils.data.dataloader.DataLoader object at 0x2b2be82fd850>, <torch.utils.data.dataloader.DataLoader object at 0x2b2be82fd9a0>, <torch.utils.data.dataloader.DataLoader object at 0x2b2be82fdaf0>]
+type(train_loaders[0]): <class 'torch.utils.data.dataloader.DataLoader'>
+len(train_loaders[0].dataset): 129395
+Starting experiment...
+Current task number: 0, len train dataset: 129395
+Joint training begin in 0th task
+/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)

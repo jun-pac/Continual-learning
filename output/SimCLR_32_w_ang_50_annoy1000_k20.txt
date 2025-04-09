@@ -1,0 +1,99 @@
+Namespace(annoy=1000, arch='resnet50', batch_size=500, cuda=0, dataset='CIFAR100', disable_cuda=False, distance='angular', epochs=50, fp16_precision=False, gpu_index=0, in_size=32, k=20, log_every_n_steps=100, lr=0.0003, n_views=2, out_dim=128, pretrained=True, seed=None, temperature=0.07, weight_decay=0.0001)
+Files already downloaded and verified
+Files already downloaded and verified
+Files already downloaded and verified
+Starting experiment...
+Current task number: 0, len train dataset: 5000
+Joint training begin in 0th task
+/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/users/PAS1289/oiocha/Persistent_Message_Passing/Continual/SimCLR/simclr.py:59: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=self.args.fp16_precision)
+0th train epoch finished ...7.1006sec
+/users/PAS1289/oiocha/Persistent_Message_Passing/Continual/SimCLR/simclr.py:75: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=self.args.fp16_precision):
+/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:1063: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  _warn_get_lr_called_within_step(self)
+1th train epoch finished ...6.7230sec
+2th train epoch finished ...6.8453sec
+3th train epoch finished ...6.7558sec
+4th train epoch finished ...6.8097sec
+5th train epoch finished ...6.8412sec
+6th train epoch finished ...6.8655sec
+7th train epoch finished ...6.7583sec
+8th train epoch finished ...6.8198sec
+9th train epoch finished ...6.7691sec
+10th train epoch finished ...6.7767sec
+11th train epoch finished ...6.7723sec
+12th train epoch finished ...6.9555sec
+13th train epoch finished ...6.7487sec
+14th train epoch finished ...6.8952sec
+15th train epoch finished ...6.6487sec
+16th train epoch finished ...6.7832sec
+17th train epoch finished ...6.8197sec
+18th train epoch finished ...6.8438sec
+19th train epoch finished ...6.7850sec
+20th train epoch finished ...6.9080sec
+21th train epoch finished ...6.7262sec
+22th train epoch finished ...6.7759sec
+23th train epoch finished ...6.7656sec
+24th train epoch finished ...6.7615sec
+25th train epoch finished ...6.7469sec
+26th train epoch finished ...6.7110sec
+27th train epoch finished ...6.7534sec
+28th train epoch finished ...6.7489sec
+29th train epoch finished ...6.7358sec
+30th train epoch finished ...6.7614sec
+31th train epoch finished ...6.7339sec
+32th train epoch finished ...6.8489sec
+33th train epoch finished ...6.7608sec
+34th train epoch finished ...6.8731sec
+35th train epoch finished ...6.8866sec
+36th train epoch finished ...6.7556sec
+37th train epoch finished ...6.7266sec
+38th train epoch finished ...6.8465sec
+39th train epoch finished ...6.9038sec
+40th train epoch finished ...6.7766sec
+41th train epoch finished ...6.8186sec
+42th train epoch finished ...6.7485sec
+43th train epoch finished ...6.8056sec
+44th train epoch finished ...6.8035sec
+45th train epoch finished ...6.7479sec
+46th train epoch finished ...6.7800sec
+47th train epoch finished ...6.7813sec
+48th train epoch finished ...6.7595sec
+49th train epoch finished ...6.7476sec
+Training has finished.
+Without projection head
+all_prev_train_features_wo_head.shape: (5000, 2048)
+annoy_index rebuild time: 1.4691
+0th validation set size: 1000
+0-th task, 0-th test set accuracy : 0.8100
+1th validation set size: 1000
+0-th task, 1-th test set accuracy : 0.0000
+2th validation set size: 1000
+0-th task, 2-th test set accuracy : 0.0000
+3th validation set size: 1000
+0-th task, 3-th test set accuracy : 0.0000
+4th validation set size: 1000
+0-th task, 4-th test set accuracy : 0.0000
+5th validation set size: 1000
+0-th task, 5-th test set accuracy : 0.0000
+6th validation set size: 1000
+0-th task, 6-th test set accuracy : 0.0000
+7th validation set size: 1000
+0-th task, 7-th test set accuracy : 0.0000
+8th validation set size: 1000
+0-th task, 8-th test set accuracy : 0.0000
+9th validation set size: 1000
+0-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 1, len train dataset: 5000
+Joint training begin in 1th task
+0th train epoch finished ...13.4996sec
+1th train epoch finished ...13.3190sec
+2th train epoch finished ...13.3625sec
+3th train epoch finished ...13.2967sec
+4th train epoch finished ...13.3251sec

@@ -1,0 +1,497 @@
+Namespace(arch='resnet50', batch_size=500, cuda=0, disable_cuda=False, distance='euclidean', epochs=50, fp16_precision=False, gpu_index=0, in_size=32, log_every_n_steps=100, lr=0.0003, n_views=2, out_dim=128, pretrained=False, seed=None, temperature=0.07, weight_decay=0.0001)
+Files already downloaded and verified
+Files already downloaded and verified
+Files already downloaded and verified
+Starting experiment...
+Current task number: 0
+Joint training begin in 0th task
+/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+/users/PAS1289/oiocha/Persistent_Message_Passing/Continual/SimCLR/simclr.py:59: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=self.args.fp16_precision)
+0th train epoch finished ...10.4752sec
+/users/PAS1289/oiocha/Persistent_Message_Passing/Continual/SimCLR/simclr.py:75: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=self.args.fp16_precision):
+/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:1063: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  _warn_get_lr_called_within_step(self)
+1th train epoch finished ...7.5234sec
+2th train epoch finished ...7.8075sec
+3th train epoch finished ...7.1046sec
+4th train epoch finished ...6.8458sec
+5th train epoch finished ...7.5063sec
+6th train epoch finished ...7.1222sec
+7th train epoch finished ...7.5744sec
+8th train epoch finished ...7.2749sec
+9th train epoch finished ...7.2792sec
+10th train epoch finished ...7.5884sec
+11th train epoch finished ...7.2457sec
+12th train epoch finished ...7.2601sec
+13th train epoch finished ...7.1915sec
+14th train epoch finished ...7.4221sec
+15th train epoch finished ...7.1699sec
+16th train epoch finished ...7.0222sec
+17th train epoch finished ...7.1172sec
+18th train epoch finished ...7.2628sec
+19th train epoch finished ...7.2485sec
+20th train epoch finished ...7.4671sec
+21th train epoch finished ...7.0581sec
+22th train epoch finished ...7.7495sec
+23th train epoch finished ...6.8544sec
+24th train epoch finished ...7.2669sec
+25th train epoch finished ...7.1911sec
+26th train epoch finished ...6.8367sec
+27th train epoch finished ...7.2837sec
+28th train epoch finished ...7.1245sec
+29th train epoch finished ...6.9537sec
+30th train epoch finished ...7.7236sec
+31th train epoch finished ...7.1009sec
+32th train epoch finished ...7.4249sec
+33th train epoch finished ...7.6245sec
+34th train epoch finished ...6.9931sec
+35th train epoch finished ...7.6676sec
+36th train epoch finished ...6.8621sec
+37th train epoch finished ...7.1984sec
+38th train epoch finished ...7.0403sec
+39th train epoch finished ...7.3539sec
+40th train epoch finished ...7.0355sec
+41th train epoch finished ...7.1922sec
+42th train epoch finished ...6.9787sec
+43th train epoch finished ...7.0975sec
+44th train epoch finished ...6.8342sec
+45th train epoch finished ...7.7084sec
+46th train epoch finished ...7.1987sec
+47th train epoch finished ...7.5456sec
+48th train epoch finished ...7.0603sec
+49th train epoch finished ...7.3774sec
+Training has finished.
+Without projection head
+all_prev_train_features_wo_head.shape: (5000, 2048)
+annoy_index rebuild time: 0.9599
+0-th task, 0-th test set accuracy : 0.3530
+0-th task, 1-th test set accuracy : 0.0000
+0-th task, 2-th test set accuracy : 0.0000
+0-th task, 3-th test set accuracy : 0.0000
+0-th task, 4-th test set accuracy : 0.0000
+0-th task, 5-th test set accuracy : 0.0000
+0-th task, 6-th test set accuracy : 0.0000
+0-th task, 7-th test set accuracy : 0.0000
+0-th task, 8-th test set accuracy : 0.0000
+0-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 1
+Joint training begin in 1th task
+0th train epoch finished ...13.7236sec
+1th train epoch finished ...13.7176sec
+2th train epoch finished ...13.9182sec
+3th train epoch finished ...13.5013sec
+4th train epoch finished ...14.9800sec
+5th train epoch finished ...13.9623sec
+6th train epoch finished ...14.1509sec
+7th train epoch finished ...14.5487sec
+8th train epoch finished ...14.1701sec
+9th train epoch finished ...14.3527sec
+10th train epoch finished ...13.9322sec
+11th train epoch finished ...13.4427sec
+12th train epoch finished ...13.5792sec
+13th train epoch finished ...15.0601sec
+14th train epoch finished ...13.7502sec
+15th train epoch finished ...14.2337sec
+16th train epoch finished ...13.4117sec
+17th train epoch finished ...13.7279sec
+18th train epoch finished ...13.6739sec
+19th train epoch finished ...14.2589sec
+20th train epoch finished ...14.4426sec
+21th train epoch finished ...13.7380sec
+22th train epoch finished ...14.7750sec
+23th train epoch finished ...13.8270sec
+24th train epoch finished ...13.7330sec
+25th train epoch finished ...14.0565sec
+26th train epoch finished ...14.7422sec
+27th train epoch finished ...14.3617sec
+28th train epoch finished ...14.0451sec
+29th train epoch finished ...13.4028sec
+30th train epoch finished ...13.7028sec
+31th train epoch finished ...13.3873sec
+32th train epoch finished ...13.6795sec
+33th train epoch finished ...13.7173sec
+34th train epoch finished ...13.9330sec
+35th train epoch finished ...13.8047sec
+36th train epoch finished ...13.8676sec
+37th train epoch finished ...14.2067sec
+38th train epoch finished ...13.6520sec
+39th train epoch finished ...13.6593sec
+40th train epoch finished ...13.7591sec
+41th train epoch finished ...13.7594sec
+42th train epoch finished ...13.7605sec
+43th train epoch finished ...13.8793sec
+44th train epoch finished ...13.8624sec
+45th train epoch finished ...14.2884sec
+46th train epoch finished ...15.0103sec
+47th train epoch finished ...14.7168sec
+48th train epoch finished ...13.9448sec
+49th train epoch finished ...13.8937sec
+Training has finished.
+Without projection head
+all_prev_train_features_wo_head.shape: (10000, 2048)
+annoy_index rebuild time: 1.9368
+1-th task, 0-th test set accuracy : 0.3180
+1-th task, 1-th test set accuracy : 0.1770
+1-th task, 2-th test set accuracy : 0.0000
+1-th task, 3-th test set accuracy : 0.0000
+1-th task, 4-th test set accuracy : 0.0000
+1-th task, 5-th test set accuracy : 0.0000
+1-th task, 6-th test set accuracy : 0.0000
+1-th task, 7-th test set accuracy : 0.0000
+1-th task, 8-th test set accuracy : 0.0000
+1-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 2
+Without projection head
+all_prev_train_features_wo_head.shape: (15000, 2048)
+annoy_index rebuild time: 2.8664
+2-th task, 0-th test set accuracy : 0.2700
+2-th task, 1-th test set accuracy : 0.1640
+2-th task, 2-th test set accuracy : 0.2000
+2-th task, 3-th test set accuracy : 0.0000
+2-th task, 4-th test set accuracy : 0.0000
+2-th task, 5-th test set accuracy : 0.0000
+2-th task, 6-th test set accuracy : 0.0000
+2-th task, 7-th test set accuracy : 0.0000
+2-th task, 8-th test set accuracy : 0.0000
+2-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 3
+Joint training begin in 3th task
+0th train epoch finished ...29.2048sec
+1th train epoch finished ...26.9976sec
+2th train epoch finished ...27.7996sec
+3th train epoch finished ...29.7419sec
+4th train epoch finished ...27.0077sec
+5th train epoch finished ...27.8012sec
+6th train epoch finished ...26.5066sec
+7th train epoch finished ...27.3663sec
+8th train epoch finished ...26.5176sec
+9th train epoch finished ...26.9946sec
+10th train epoch finished ...27.1442sec
+11th train epoch finished ...27.1801sec
+12th train epoch finished ...27.2056sec
+13th train epoch finished ...27.0036sec
+14th train epoch finished ...26.9890sec
+15th train epoch finished ...27.1126sec
+16th train epoch finished ...29.7937sec
+17th train epoch finished ...26.6372sec
+18th train epoch finished ...26.5755sec
+19th train epoch finished ...27.1509sec
+20th train epoch finished ...28.0002sec
+21th train epoch finished ...29.3748sec
+22th train epoch finished ...26.7521sec
+23th train epoch finished ...26.6837sec
+24th train epoch finished ...28.5571sec
+25th train epoch finished ...27.3408sec
+26th train epoch finished ...27.0119sec
+27th train epoch finished ...26.6837sec
+28th train epoch finished ...27.1873sec
+29th train epoch finished ...26.8320sec
+30th train epoch finished ...26.9354sec
+31th train epoch finished ...26.4532sec
+32th train epoch finished ...26.6921sec
+33th train epoch finished ...27.1201sec
+34th train epoch finished ...26.5841sec
+35th train epoch finished ...26.6001sec
+36th train epoch finished ...27.5019sec
+37th train epoch finished ...27.4675sec
+38th train epoch finished ...26.8561sec
+39th train epoch finished ...27.1919sec
+40th train epoch finished ...27.4622sec
+41th train epoch finished ...26.9369sec
+42th train epoch finished ...27.3531sec
+43th train epoch finished ...26.0119sec
+44th train epoch finished ...26.8970sec
+45th train epoch finished ...27.2102sec
+46th train epoch finished ...26.8761sec
+47th train epoch finished ...27.9648sec
+48th train epoch finished ...27.9217sec
+49th train epoch finished ...27.0064sec
+Training has finished.
+Without projection head
+all_prev_train_features_wo_head.shape: (20000, 2048)
+annoy_index rebuild time: 3.6116
+3-th task, 0-th test set accuracy : 0.2840
+3-th task, 1-th test set accuracy : 0.1850
+3-th task, 2-th test set accuracy : 0.2940
+3-th task, 3-th test set accuracy : 0.1850
+3-th task, 4-th test set accuracy : 0.0000
+3-th task, 5-th test set accuracy : 0.0000
+3-th task, 6-th test set accuracy : 0.0000
+3-th task, 7-th test set accuracy : 0.0000
+3-th task, 8-th test set accuracy : 0.0000
+3-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 4
+Without projection head
+all_prev_train_features_wo_head.shape: (25000, 2048)
+annoy_index rebuild time: 4.6632
+4-th task, 0-th test set accuracy : 0.2510
+4-th task, 1-th test set accuracy : 0.1810
+4-th task, 2-th test set accuracy : 0.2650
+4-th task, 3-th test set accuracy : 0.1690
+4-th task, 4-th test set accuracy : 0.1740
+4-th task, 5-th test set accuracy : 0.0000
+4-th task, 6-th test set accuracy : 0.0000
+4-th task, 7-th test set accuracy : 0.0000
+4-th task, 8-th test set accuracy : 0.0000
+4-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 5
+Without projection head
+all_prev_train_features_wo_head.shape: (30000, 2048)
+annoy_index rebuild time: 5.4188
+5-th task, 0-th test set accuracy : 0.2530
+5-th task, 1-th test set accuracy : 0.1650
+5-th task, 2-th test set accuracy : 0.2440
+5-th task, 3-th test set accuracy : 0.1550
+5-th task, 4-th test set accuracy : 0.1490
+5-th task, 5-th test set accuracy : 0.1500
+5-th task, 6-th test set accuracy : 0.0000
+5-th task, 7-th test set accuracy : 0.0000
+5-th task, 8-th test set accuracy : 0.0000
+5-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 6
+Without projection head
+all_prev_train_features_wo_head.shape: (35000, 2048)
+annoy_index rebuild time: 6.7016
+6-th task, 0-th test set accuracy : 0.2410
+6-th task, 1-th test set accuracy : 0.1500
+6-th task, 2-th test set accuracy : 0.2320
+6-th task, 3-th test set accuracy : 0.1290
+6-th task, 4-th test set accuracy : 0.1490
+6-th task, 5-th test set accuracy : 0.1390
+6-th task, 6-th test set accuracy : 0.2010
+6-th task, 7-th test set accuracy : 0.0000
+6-th task, 8-th test set accuracy : 0.0000
+6-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 7
+Joint training begin in 7th task
+0th train epoch finished ...53.9766sec
+1th train epoch finished ...53.8022sec
+2th train epoch finished ...54.8093sec
+3th train epoch finished ...53.6070sec
+4th train epoch finished ...52.5014sec
+5th train epoch finished ...52.8219sec
+6th train epoch finished ...53.1820sec
+7th train epoch finished ...53.1702sec
+8th train epoch finished ...54.9231sec
+9th train epoch finished ...53.6893sec
+10th train epoch finished ...53.8747sec
+11th train epoch finished ...52.7113sec
+12th train epoch finished ...52.5087sec
+13th train epoch finished ...53.8387sec
+14th train epoch finished ...52.7310sec
+15th train epoch finished ...54.3859sec
+16th train epoch finished ...52.4046sec
+17th train epoch finished ...53.2883sec
+18th train epoch finished ...54.2388sec
+19th train epoch finished ...53.5906sec
+20th train epoch finished ...52.7724sec
+21th train epoch finished ...53.4167sec
+22th train epoch finished ...52.7537sec
+23th train epoch finished ...52.5838sec
+24th train epoch finished ...55.5475sec
+25th train epoch finished ...53.5513sec
+26th train epoch finished ...53.5771sec
+27th train epoch finished ...52.7612sec
+28th train epoch finished ...54.0786sec
+29th train epoch finished ...53.0268sec
+30th train epoch finished ...54.0895sec
+31th train epoch finished ...52.6088sec
+32th train epoch finished ...53.3177sec
+33th train epoch finished ...53.0606sec
+34th train epoch finished ...53.2207sec
+35th train epoch finished ...55.7561sec
+36th train epoch finished ...53.2006sec
+37th train epoch finished ...52.3660sec
+38th train epoch finished ...51.9581sec
+39th train epoch finished ...52.8333sec
+40th train epoch finished ...52.1676sec
+41th train epoch finished ...52.2894sec
+42th train epoch finished ...54.0206sec
+43th train epoch finished ...53.8218sec
+44th train epoch finished ...52.6075sec
+45th train epoch finished ...53.4685sec
+46th train epoch finished ...53.3118sec
+47th train epoch finished ...54.2110sec
+48th train epoch finished ...54.3327sec
+49th train epoch finished ...53.8222sec
+Training has finished.
+Without projection head
+all_prev_train_features_wo_head.shape: (40000, 2048)
+annoy_index rebuild time: 7.2788
+7-th task, 0-th test set accuracy : 0.3210
+7-th task, 1-th test set accuracy : 0.2190
+7-th task, 2-th test set accuracy : 0.3400
+7-th task, 3-th test set accuracy : 0.1650
+7-th task, 4-th test set accuracy : 0.2270
+7-th task, 5-th test set accuracy : 0.2160
+7-th task, 6-th test set accuracy : 0.2610
+7-th task, 7-th test set accuracy : 0.2360
+7-th task, 8-th test set accuracy : 0.0000
+7-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 8
+Without projection head
+all_prev_train_features_wo_head.shape: (45000, 2048)
+annoy_index rebuild time: 8.3847
+8-th task, 0-th test set accuracy : 0.3110
+8-th task, 1-th test set accuracy : 0.2080
+8-th task, 2-th test set accuracy : 0.3070
+8-th task, 3-th test set accuracy : 0.1710
+8-th task, 4-th test set accuracy : 0.2360
+8-th task, 5-th test set accuracy : 0.2060
+8-th task, 6-th test set accuracy : 0.2370
+8-th task, 7-th test set accuracy : 0.2250
+8-th task, 8-th test set accuracy : 0.1280
+8-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 9
+Without projection head
+all_prev_train_features_wo_head.shape: (50000, 2048)
+annoy_index rebuild time: 9.2202
+9-th task, 0-th test set accuracy : 0.2920
+9-th task, 1-th test set accuracy : 0.1930
+9-th task, 2-th test set accuracy : 0.3270
+9-th task, 3-th test set accuracy : 0.1610
+9-th task, 4-th test set accuracy : 0.2060
+9-th task, 5-th test set accuracy : 0.1940
+9-th task, 6-th test set accuracy : 0.2300
+9-th task, 7-th test set accuracy : 0.2290
+9-th task, 8-th test set accuracy : 0.1220
+9-th task, 9-th test set accuracy : 0.1780
+
+Without projection head
+=== Results summary ===
+Accuracy after 0-th task :  0.353 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+Accuracy after 1-th task :  0.318 0.177 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+Accuracy after 2-th task :  0.27 0.164 0.2 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+Accuracy after 3-th task :  0.284 0.185 0.294 0.185 0.0 0.0 0.0 0.0 0.0 0.0 
+Accuracy after 4-th task :  0.251 0.181 0.265 0.169 0.174 0.0 0.0 0.0 0.0 0.0 
+Accuracy after 5-th task :  0.253 0.165 0.244 0.155 0.149 0.15 0.0 0.0 0.0 0.0 
+Accuracy after 6-th task :  0.241 0.15 0.232 0.129 0.149 0.139 0.201 0.0 0.0 0.0 
+Accuracy after 7-th task :  0.321 0.219 0.34 0.165 0.227 0.216 0.261 0.236 0.0 0.0 
+Accuracy after 8-th task :  0.311 0.208 0.307 0.171 0.236 0.206 0.237 0.225 0.128 0.0 
+Accuracy after 9-th task :  0.292 0.193 0.327 0.161 0.206 0.194 0.23 0.229 0.122 0.178 
+=== Results summary2 ===
+0.353
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+
+0.318
+0.177
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+
+0.27
+0.164
+0.2
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+
+0.284
+0.185
+0.294
+0.185
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+
+0.251
+0.181
+0.265
+0.169
+0.174
+0.0
+0.0
+0.0
+0.0
+0.0
+
+0.253
+0.165
+0.244
+0.155
+0.149
+0.15
+0.0
+0.0
+0.0
+0.0
+
+0.241
+0.15
+0.232
+0.129
+0.149
+0.139
+0.201
+0.0
+0.0
+0.0
+
+0.321
+0.219
+0.34
+0.165
+0.227
+0.216
+0.261
+0.236
+0.0
+0.0
+
+0.311
+0.208
+0.307
+0.171
+0.236
+0.206
+0.237
+0.225
+0.128
+0.0
+
+0.292
+0.193
+0.327
+0.161
+0.206
+0.194
+0.23
+0.229
+0.122
+0.178
+
+Total training time: 5394.2425

@@ -1,0 +1,441 @@
+Namespace(annoy=10000, arch='resnet50', batch_size=500, cuda=0, dataset='CIFAR100', disable_cuda=False, distance='angular', epochs=50, fp16_precision=False, gpu_index=0, in_size=32, k=10, log_every_n_steps=100, lr=0.0003, n_views=2, out_dim=128, pretrained=False, seed=None, temperature=0.07, weight_decay=0.0001)
+Files already downloaded and verified
+Files already downloaded and verified
+Files already downloaded and verified
+Starting experiment...
+Current task number: 0, len train dataset: 5000
+Joint training begin in 0th task
+/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+Dataset iteration works!
+Make New file
+/users/PAS1289/oiocha/Persistent_Message_Passing/Continual/SimCLR/simclr.py:59: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=self.args.fp16_precision)
+0th train epoch finished ...9.6425sec
+/users/PAS1289/oiocha/Persistent_Message_Passing/Continual/SimCLR/simclr.py:82: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=self.args.fp16_precision):
+/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:1063: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  _warn_get_lr_called_within_step(self)
+1th train epoch finished ...6.8829sec
+2th train epoch finished ...6.9894sec
+3th train epoch finished ...7.0220sec
+4th train epoch finished ...7.0950sec
+5th train epoch finished ...6.9812sec
+6th train epoch finished ...6.9439sec
+7th train epoch finished ...7.0007sec
+8th train epoch finished ...7.0440sec
+9th train epoch finished ...6.8779sec
+10th train epoch finished ...6.9231sec
+11th train epoch finished ...6.8859sec
+12th train epoch finished ...7.9497sec
+13th train epoch finished ...7.7582sec
+14th train epoch finished ...7.8076sec
+15th train epoch finished ...6.9460sec
+16th train epoch finished ...8.0472sec
+17th train epoch finished ...6.9194sec
+18th train epoch finished ...7.9806sec
+19th train epoch finished ...7.9593sec
+20th train epoch finished ...8.0834sec
+21th train epoch finished ...7.9775sec
+22th train epoch finished ...7.9963sec
+23th train epoch finished ...7.9566sec
+24th train epoch finished ...7.0504sec
+25th train epoch finished ...7.9521sec
+26th train epoch finished ...7.0464sec
+27th train epoch finished ...7.9697sec
+28th train epoch finished ...8.2281sec
+29th train epoch finished ...7.9496sec
+30th train epoch finished ...7.9532sec
+31th train epoch finished ...8.0465sec
+32th train epoch finished ...7.9567sec
+33th train epoch finished ...7.9336sec
+34th train epoch finished ...7.9629sec
+35th train epoch finished ...8.0492sec
+36th train epoch finished ...7.9379sec
+37th train epoch finished ...7.9714sec
+38th train epoch finished ...7.9711sec
+39th train epoch finished ...8.0115sec
+40th train epoch finished ...7.9374sec
+41th train epoch finished ...7.9592sec
+42th train epoch finished ...7.9777sec
+43th train epoch finished ...8.1381sec
+44th train epoch finished ...6.9555sec
+45th train epoch finished ...7.9873sec
+46th train epoch finished ...8.0039sec
+47th train epoch finished ...7.9961sec
+48th train epoch finished ...8.0212sec
+49th train epoch finished ...8.0081sec
+Training has finished.
+Without projection head
+all_prev_train_features_wo_head.shape: (5000, 2048)
+annoy_index rebuild time: 8.0304
+0th validation set size: 1000
+0-th task, 0-th test set accuracy : 0.3670
+1th validation set size: 1000
+0-th task, 1-th test set accuracy : 0.0000
+2th validation set size: 1000
+0-th task, 2-th test set accuracy : 0.0000
+3th validation set size: 1000
+0-th task, 3-th test set accuracy : 0.0000
+4th validation set size: 1000
+0-th task, 4-th test set accuracy : 0.0000
+5th validation set size: 1000
+0-th task, 5-th test set accuracy : 0.0000
+6th validation set size: 1000
+0-th task, 6-th test set accuracy : 0.0000
+7th validation set size: 1000
+0-th task, 7-th test set accuracy : 0.0000
+8th validation set size: 1000
+0-th task, 8-th test set accuracy : 0.0000
+9th validation set size: 1000
+0-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 1, len train dataset: 5000
+Joint training begin in 1th task
+Dataset iteration works!
+Make New file
+0th train epoch finished ...13.7811sec
+1th train epoch finished ...13.5008sec
+2th train epoch finished ...13.4423sec
+3th train epoch finished ...15.5122sec
+4th train epoch finished ...13.3790sec
+5th train epoch finished ...15.4248sec
+6th train epoch finished ...15.2570sec
+7th train epoch finished ...15.5181sec
+8th train epoch finished ...13.3746sec
+9th train epoch finished ...13.6752sec
+10th train epoch finished ...13.6023sec
+11th train epoch finished ...15.4411sec
+12th train epoch finished ...15.5960sec
+13th train epoch finished ...15.6240sec
+14th train epoch finished ...14.5916sec
+15th train epoch finished ...15.5842sec
+16th train epoch finished ...15.4533sec
+17th train epoch finished ...13.9649sec
+18th train epoch finished ...15.5033sec
+19th train epoch finished ...13.6633sec
+20th train epoch finished ...13.4727sec
+21th train epoch finished ...13.5477sec
+22th train epoch finished ...13.5791sec
+23th train epoch finished ...15.4976sec
+24th train epoch finished ...13.6715sec
+25th train epoch finished ...13.5949sec
+26th train epoch finished ...15.6249sec
+27th train epoch finished ...15.4151sec
+28th train epoch finished ...15.2770sec
+29th train epoch finished ...13.5273sec
+30th train epoch finished ...15.7744sec
+31th train epoch finished ...13.5636sec
+32th train epoch finished ...13.6217sec
+33th train epoch finished ...13.7440sec
+34th train epoch finished ...13.6441sec
+35th train epoch finished ...13.5835sec
+36th train epoch finished ...13.7248sec
+37th train epoch finished ...13.5466sec
+38th train epoch finished ...13.8650sec
+39th train epoch finished ...13.5687sec
+40th train epoch finished ...13.5619sec
+41th train epoch finished ...13.5493sec
+42th train epoch finished ...13.5949sec
+43th train epoch finished ...13.7291sec
+44th train epoch finished ...13.6068sec
+45th train epoch finished ...15.5398sec
+46th train epoch finished ...13.5512sec
+47th train epoch finished ...15.3598sec
+48th train epoch finished ...14.2177sec
+49th train epoch finished ...13.8175sec
+Training has finished.
+Without projection head
+all_prev_train_features_wo_head.shape: (10000, 2048)
+annoy_index rebuild time: 30.2296
+0th validation set size: 1000
+1-th task, 0-th test set accuracy : 0.3400
+1th validation set size: 1000
+1-th task, 1-th test set accuracy : 0.2120
+2th validation set size: 1000
+1-th task, 2-th test set accuracy : 0.0000
+3th validation set size: 1000
+1-th task, 3-th test set accuracy : 0.0000
+4th validation set size: 1000
+1-th task, 4-th test set accuracy : 0.0000
+5th validation set size: 1000
+1-th task, 5-th test set accuracy : 0.0000
+6th validation set size: 1000
+1-th task, 6-th test set accuracy : 0.0000
+7th validation set size: 1000
+1-th task, 7-th test set accuracy : 0.0000
+8th validation set size: 1000
+1-th task, 8-th test set accuracy : 0.0000
+9th validation set size: 1000
+1-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 2, len train dataset: 5000
+Without projection head
+all_prev_train_features_wo_head.shape: (15000, 2048)
+annoy_index rebuild time: 56.8638
+0th validation set size: 1000
+2-th task, 0-th test set accuracy : 0.2730
+1th validation set size: 1000
+2-th task, 1-th test set accuracy : 0.1920
+2th validation set size: 1000
+2-th task, 2-th test set accuracy : 0.2640
+3th validation set size: 1000
+2-th task, 3-th test set accuracy : 0.0000
+4th validation set size: 1000
+2-th task, 4-th test set accuracy : 0.0000
+5th validation set size: 1000
+2-th task, 5-th test set accuracy : 0.0000
+6th validation set size: 1000
+2-th task, 6-th test set accuracy : 0.0000
+7th validation set size: 1000
+2-th task, 7-th test set accuracy : 0.0000
+8th validation set size: 1000
+2-th task, 8-th test set accuracy : 0.0000
+9th validation set size: 1000
+2-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 3, len train dataset: 5000
+Joint training begin in 3th task
+Dataset iteration works!
+Make New file
+0th train epoch finished ...29.9692sec
+1th train epoch finished ...26.3318sec
+2th train epoch finished ...30.3242sec
+3th train epoch finished ...28.8877sec
+4th train epoch finished ...26.7066sec
+5th train epoch finished ...26.3981sec
+6th train epoch finished ...26.6685sec
+7th train epoch finished ...26.5949sec
+8th train epoch finished ...27.1602sec
+9th train epoch finished ...26.5662sec
+10th train epoch finished ...26.7811sec
+11th train epoch finished ...30.1750sec
+12th train epoch finished ...30.1787sec
+13th train epoch finished ...30.2577sec
+14th train epoch finished ...30.2063sec
+15th train epoch finished ...26.6035sec
+16th train epoch finished ...26.9526sec
+17th train epoch finished ...26.5552sec
+18th train epoch finished ...26.5254sec
+19th train epoch finished ...26.6537sec
+20th train epoch finished ...30.4304sec
+21th train epoch finished ...30.5044sec
+22th train epoch finished ...30.4397sec
+23th train epoch finished ...30.5836sec
+24th train epoch finished ...26.4111sec
+25th train epoch finished ...26.4730sec
+26th train epoch finished ...30.4014sec
+27th train epoch finished ...30.5489sec
+28th train epoch finished ...26.3279sec
+29th train epoch finished ...26.6102sec
+30th train epoch finished ...26.5667sec
+31th train epoch finished ...26.3557sec
+32th train epoch finished ...26.4262sec
+33th train epoch finished ...26.3956sec
+34th train epoch finished ...26.6895sec
+35th train epoch finished ...26.3462sec
+36th train epoch finished ...30.0713sec
+37th train epoch finished ...26.6868sec
+38th train epoch finished ...26.2998sec
+39th train epoch finished ...26.2170sec
+40th train epoch finished ...26.7119sec
+41th train epoch finished ...26.2987sec
+42th train epoch finished ...26.4046sec
+43th train epoch finished ...26.5071sec
+44th train epoch finished ...26.2782sec
+45th train epoch finished ...26.3665sec
+46th train epoch finished ...26.2842sec
+47th train epoch finished ...26.5600sec
+48th train epoch finished ...30.2252sec
+49th train epoch finished ...30.5671sec
+Training has finished.
+Without projection head
+all_prev_train_features_wo_head.shape: (20000, 2048)
+annoy_index rebuild time: 83.3023
+0th validation set size: 1000
+3-th task, 0-th test set accuracy : 0.3040
+1th validation set size: 1000
+3-th task, 1-th test set accuracy : 0.2210
+2th validation set size: 1000
+3-th task, 2-th test set accuracy : 0.3480
+3th validation set size: 1000
+3-th task, 3-th test set accuracy : 0.2170
+4th validation set size: 1000
+3-th task, 4-th test set accuracy : 0.0000
+5th validation set size: 1000
+3-th task, 5-th test set accuracy : 0.0000
+6th validation set size: 1000
+3-th task, 6-th test set accuracy : 0.0000
+7th validation set size: 1000
+3-th task, 7-th test set accuracy : 0.0000
+8th validation set size: 1000
+3-th task, 8-th test set accuracy : 0.0000
+9th validation set size: 1000
+3-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 4, len train dataset: 5000
+Without projection head
+all_prev_train_features_wo_head.shape: (25000, 2048)
+annoy_index rebuild time: 120.1201
+0th validation set size: 1000
+4-th task, 0-th test set accuracy : 0.2760
+1th validation set size: 1000
+4-th task, 1-th test set accuracy : 0.1930
+2th validation set size: 1000
+4-th task, 2-th test set accuracy : 0.3320
+3th validation set size: 1000
+4-th task, 3-th test set accuracy : 0.2070
+4th validation set size: 1000
+4-th task, 4-th test set accuracy : 0.2090
+5th validation set size: 1000
+4-th task, 5-th test set accuracy : 0.0000
+6th validation set size: 1000
+4-th task, 6-th test set accuracy : 0.0000
+7th validation set size: 1000
+4-th task, 7-th test set accuracy : 0.0000
+8th validation set size: 1000
+4-th task, 8-th test set accuracy : 0.0000
+9th validation set size: 1000
+4-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 5, len train dataset: 5000
+Without projection head
+all_prev_train_features_wo_head.shape: (30000, 2048)
+annoy_index rebuild time: 153.7962
+0th validation set size: 1000
+5-th task, 0-th test set accuracy : 0.2680
+1th validation set size: 1000
+5-th task, 1-th test set accuracy : 0.1710
+2th validation set size: 1000
+5-th task, 2-th test set accuracy : 0.3210
+3th validation set size: 1000
+5-th task, 3-th test set accuracy : 0.1910
+4th validation set size: 1000
+5-th task, 4-th test set accuracy : 0.1940
+5th validation set size: 1000
+5-th task, 5-th test set accuracy : 0.1630
+6th validation set size: 1000
+5-th task, 6-th test set accuracy : 0.0000
+7th validation set size: 1000
+5-th task, 7-th test set accuracy : 0.0000
+8th validation set size: 1000
+5-th task, 8-th test set accuracy : 0.0000
+9th validation set size: 1000
+5-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 6, len train dataset: 5000
+Without projection head
+all_prev_train_features_wo_head.shape: (35000, 2048)
+annoy_index rebuild time: 194.2548
+0th validation set size: 1000
+6-th task, 0-th test set accuracy : 0.2530
+1th validation set size: 1000
+6-th task, 1-th test set accuracy : 0.1460
+2th validation set size: 1000
+6-th task, 2-th test set accuracy : 0.3140
+3th validation set size: 1000
+6-th task, 3-th test set accuracy : 0.1630
+4th validation set size: 1000
+6-th task, 4-th test set accuracy : 0.1750
+5th validation set size: 1000
+6-th task, 5-th test set accuracy : 0.1600
+6th validation set size: 1000
+6-th task, 6-th test set accuracy : 0.2400
+7th validation set size: 1000
+6-th task, 7-th test set accuracy : 0.0000
+8th validation set size: 1000
+6-th task, 8-th test set accuracy : 0.0000
+9th validation set size: 1000
+6-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 7, len train dataset: 5000
+Without projection head
+=== Results summary ===
+Accuracy after 0-th task :  0.367 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+Accuracy after 1-th task :  0.34 0.212 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+Accuracy after 2-th task :  0.273 0.192 0.264 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+Accuracy after 3-th task :  0.304 0.221 0.348 0.217 0.0 0.0 0.0 0.0 0.0 0.0 
+Accuracy after 4-th task :  0.276 0.193 0.332 0.207 0.209 0.0 0.0 0.0 0.0 0.0 
+Accuracy after 5-th task :  0.268 0.171 0.321 0.191 0.194 0.163 0.0 0.0 0.0 0.0 
+Accuracy after 6-th task :  0.253 0.146 0.314 0.163 0.175 0.16 0.24 0.0 0.0 0.0 
+=== Results summary2 ===
+0.367
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+
+0.34
+0.212
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+
+0.273
+0.192
+0.264
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+
+0.304
+0.221
+0.348
+0.217
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+
+0.276
+0.193
+0.332
+0.207
+0.209
+0.0
+0.0
+0.0
+0.0
+0.0
+
+0.268
+0.171
+0.321
+0.191
+0.194
+0.163
+0.0
+0.0
+0.0
+0.0
+
+0.253
+0.146
+0.314
+0.163
+0.175
+0.16
+0.24
+0.0
+0.0
+0.0
+
+Total training time: 4799.1297

@@ -265,7 +265,7 @@ def main(args):
         print(f"Current task number: {task}, len train dataset: {len(train_loaders[task].dataset)}")
         if(task==7):
             break
-        if task+1 in [1,2,4,8]:
+        if task+1 in [1,2,3,4,5,6,7,8]:
             print(f"Joint training begin in {task}th task")
             model = ResNetSimCLR(out_dim=args.out_dim, pretrained=args.pretrained)
             model = model.to(args.device)
@@ -436,79 +436,8 @@ if __name__ == "__main__":
 # 'WO projection head' is super important
 # conda activate vv
 
-# python cifar100_KNN_simCLR.py --pretrained --epochs 50 --batch-size 500 --in-size 32 |&tee output/SimCLR_32_w_pretrained.txt
-# python cifar100_KNN_simCLR.py --pretrained --epochs 20 --batch-size 50 --in-size 224 |&tee output/SimCLR_224_w_pretrained.txt
-# python cifar100_KNN_simCLR.py --pretrained --epochs 200 --batch-size 500 --in-size 32 |&tee output/SimCLR_32_w_pretrained_200.txt
-# python cifar100_KNN_simCLR.py --epochs 50 --batch-size 500 --in-size 32 |&tee output/SimCLR_32_wo_pretrained.txt
-
-# Use different dist
-# python cifar100_KNN_simCLR.py --pretrained --epochs 50 --batch-size 500 --in-size 32 --distance angular |&tee output/SimCLR_32_w_angular.txt
-# python cifar100_KNN_simCLR.py --pretrained --epochs 50 --batch-size 500 --in-size 32 --distance dot |&tee output/SimCLR_32_wp_dot.txt
-
-# angular is slightly better than euclidean
-# python cifar100_KNN_simCLR.py --pretrained --epochs 200 --batch-size 500 --in-size 32 --distance angular |&tee output/SimCLR_32_w_angular_200.txt
-# python cifar100_KNN_simCLR.py --pretrained --epochs 150 --batch-size 50 --in-size 224 --distance angular |&tee output/SimCLR_224_w_angular_150.txt
-
-# python cifar100_KNN_simCLR.py --pretrained --epochs 50 --annoy 50 --batch-size 500 --in-size 32 --distance angular |&tee output/SimCLR_32_w_ang_50_annoy50.txt
-# python cifar100_KNN_simCLR.py --pretrained --epochs 50 --annoy 1000 --batch-size 500 --in-size 32 --distance angular |&tee output/SimCLR_32_w_ang_50_annoy1000.txt
-# python cifar100_KNN_simCLR.py --pretrained --epochs 1000 --annoy 2000 --batch-size 500 --in-size 32 --distance angular |&tee output/SimCLR_32_w_ang_1000_annoy2000.txt
-# Failed. Not much improvement -- No no, I think its good
-
-# python cifar100_KNN_simCLR.py --pretrained --epochs 50 --annoy 1000 --batch-size 500 --in-size 32 --distance angular --k 20 |&tee output/SimCLR_32_w_ang_50_annoy1000_k20.txt
-# python cifar100_KNN_simCLR.py --pretrained --epochs 50 --annoy 10000 --batch-size 500 --in-size 32 --distance angular |&tee output/SimCLR_32_w_ang_50_annoy10000.txt
-# python cifar100_KNN_simCLR.py --pretrained --epochs 50 --annoy 1000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_32_w_ang_50_annoy1000_k10.txt
-
-# python cifar100_KNN_simCLR.py --pretrained --epochs 200 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 20 |&tee output/SimCLR_32_w_ang_200_annoy10000_k20.txt
-# python cifar100_KNN_simCLR.py --pretrained --epochs 300 --annoy 10000 --batch-size 50 --in-size 224 --distance angular --k 20 |&tee output/SimCLR_224_w_ang_300_annoy10000_k20.txt
-
-# python cifar100_KNN_simCLR.py --epochs 300 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 20 |&tee output/SimCLR_32_wop_ang_300_annoy10000_k20.txt
-# python cifar100_KNN_simCLR.py --epochs 2000 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 20 |&tee output/SimCLR_32_wop_ang_2000_annoy10000_k20.txt
-# (4h 5min)
-
-# python cifar100_KNN_simCLR.py --epochs 5000 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 20 |&tee output/SimCLR_32_wop_ang_5000_annoy10000_k20.txt
-# python cifar100_KNN_simCLR.py --pretrained --epochs 5000 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 20 |&tee output/SimCLR_32_w_ang_5000_annoy10000_k20.txt
-
-
-# python cifar100_KNN_simCLR.py --pretrained --epochs 2000 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 20 |&tee output/SimCLR_32_w_ang_2000_annoy10000_k20.txt
-
-# python cifar100_KNN_simCLR.py --epochs 300 --annoy 50000 --batch-size 500 --in-size 32 --distance angular --k 20 |&tee output/SimCLR_32_wop_ang_300_annoy50000_k20.txt
-# python cifar100_KNN_simCLR.py --epochs 300 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 100 |&tee output/SimCLR_32_wop_ang_300_annoy10000_k100.txt
-# python cifar100_KNN_simCLR.py --epochs 300 --annoy 20000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_32_wop_ang_300_annoy20000_k10.txt
-
-
-# python cifar100_KNN_simCLR.py --epochs 3000 --annoy 20000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_32_wop_ang_3000_annoy20000_k10.txt
+# python cifar100_KNN_simCLR_joint.py --epochs 150 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/joint_SimCLR_32_wop_ang_150_annoy10000_k10.txt
 
 
 
-
-
-
-
-
-
-# ImageNet
-# python cifar100_KNN_simCLR.py --dataset ImageNet --epochs 1 --annoy 1000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_ImageNet_32_wop_1_annoy1000_k10.txt
-# python cifar100_KNN_simCLR.py --dataset ImageNet --epochs 20 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_ImageNet_32_wop_20_annoy10000_k10.txt
-# python cifar100_KNN_simCLR.py --dataset ImageNet --epochs 300 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_ImageNet_32_wop_300_annoy10000_k10.txt
-
-
-
-
-# Modify in_size something -- no problem...
-# python cifar100_KNN_simCLR.py --pretrained --epochs 50 --annoy 1000 --batch-size 500 --in-size 32 --distance angular --k 20 |&tee output/SimCLR_32_w_ang_50_annoy1000_k20.txt
-# python cifar100_KNN_simCLR.py --pretrained --epochs 150 --batch-size 50 --in-size 224 --distance angular |&tee output/SimCLR_224_w_angular_150_2.txt
-
-
-
-# Further research
-# python cifar100_KNN_simCLR.py --epochs 50 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_32_wop_ang_50_annoy10000_k10.txt
-
-# python cifar100_KNN_simCLR.py --epochs 100 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_32_wop_ang_100_annoy10000_k10.txt
-# python cifar100_KNN_simCLR.py --epochs 150 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_32_wop_ang_150_annoy10000_k10.txt
-# python cifar100_KNN_simCLR.py --epochs 1000 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_32_wop_ang_1000_annoy10000_k10.txt
-# python cifar100_KNN_simCLR.py --epochs 1500 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_32_wop_ang_1500_annoy10000_k10.txt
-
-
-# For first train-loss
-# python cifar100_KNN_simCLR.py --epochs 10 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_32_wop_ang_10_forloss.txt
-# python cifar100_KNN_simCLR.py --epochs 3000 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_32_wop_ang_3000_forloss.txt
+# python cifar100_KNN_simCLR_joint.py --epochs 1500 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/joint_SimCLR_32_wop_ang_1500_annoy10000_k10.txt

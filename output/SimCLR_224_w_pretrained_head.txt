@@ -1,0 +1,56 @@
+Namespace(arch='resnet50', batch_size=50, cuda=0, disable_cuda=False, epochs=20, fp16_precision=False, gpu_index=0, in_size=224, log_every_n_steps=100, lr=0.0003, n_views=2, out_dim=128, pretrained=True, seed=None, temperature=0.07, weight_decay=0.0001)
+Files already downloaded and verified
+Files already downloaded and verified
+Files already downloaded and verified
+Starting experiment...
+Current task number: 0
+Joint training begin in 0th task
+/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/users/PAS1289/oiocha/Persistent_Message_Passing/Continual/SimCLR/simclr.py:59: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=self.args.fp16_precision)
+0th train epoch finished ...62.2256sec
+/users/PAS1289/oiocha/Persistent_Message_Passing/Continual/SimCLR/simclr.py:75: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=self.args.fp16_precision):
+/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:1063: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  _warn_get_lr_called_within_step(self)
+1th train epoch finished ...65.8419sec
+2th train epoch finished ...67.1322sec
+3th train epoch finished ...66.5709sec
+4th train epoch finished ...66.6910sec
+5th train epoch finished ...66.0259sec
+6th train epoch finished ...66.1663sec
+7th train epoch finished ...66.0833sec
+8th train epoch finished ...66.6697sec
+9th train epoch finished ...66.8599sec
+10th train epoch finished ...65.7455sec
+11th train epoch finished ...67.3387sec
+12th train epoch finished ...66.6270sec
+13th train epoch finished ...64.1883sec
+14th train epoch finished ...65.7694sec
+15th train epoch finished ...64.2719sec
+16th train epoch finished ...66.3993sec
+17th train epoch finished ...64.2892sec
+18th train epoch finished ...64.4519sec
+19th train epoch finished ...65.5761sec
+Training has finished.
+idx : 0
+all_prev_train_features.shape: (5000, 128)
+Train feature extraction time: 6.6751
+annoy_index rebuild time: 0.0757
+0-th task, 0-th test set accuracy : 0.7310
+0-th task, 1-th test set accuracy : 0.0000
+0-th task, 2-th test set accuracy : 0.0000
+0-th task, 3-th test set accuracy : 0.0000
+0-th task, 4-th test set accuracy : 0.0000
+0-th task, 5-th test set accuracy : 0.0000
+0-th task, 6-th test set accuracy : 0.0000
+0-th task, 7-th test set accuracy : 0.0000
+0-th task, 8-th test set accuracy : 0.0000
+0-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 1
+Joint training begin in 1th task
+0th train epoch finished ...127.8749sec

@@ -1,0 +1,1350 @@
+Namespace(annoy=10000, arch='resnet50', batch_size=500, cuda=0, dataset='CIFAR100', disable_cuda=False, distance='angular', epochs=150, fp16_precision=False, gpu_index=0, in_size=32, k=10, log_every_n_steps=100, lr=0.0003, n_views=2, out_dim=128, pretrained=False, seed=None, temperature=0.07, weight_decay=0.0001)
+Files already downloaded and verified
+Files already downloaded and verified
+Files already downloaded and verified
+Starting experiment...
+Current task number: 0, len train dataset: 5000
+Joint training begin in 0th task
+/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+Dataset iteration works!
+/users/PAS1289/oiocha/Persistent_Message_Passing/Continual/SimCLR/simclr.py:59: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=self.args.fp16_precision)
+0th train epoch finished ...9.8131sec
+/users/PAS1289/oiocha/Persistent_Message_Passing/Continual/SimCLR/simclr.py:75: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=self.args.fp16_precision):
+/users/PAS1289/oiocha/anaconda3/envs/vv/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:1063: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  _warn_get_lr_called_within_step(self)
+1th train epoch finished ...6.8945sec
+2th train epoch finished ...6.8561sec
+3th train epoch finished ...6.9415sec
+4th train epoch finished ...7.2872sec
+5th train epoch finished ...6.9746sec
+6th train epoch finished ...6.9581sec
+7th train epoch finished ...7.0246sec
+8th train epoch finished ...7.0921sec
+9th train epoch finished ...7.3950sec
+10th train epoch finished ...7.0828sec
+11th train epoch finished ...6.9411sec
+12th train epoch finished ...7.0157sec
+13th train epoch finished ...7.2802sec
+14th train epoch finished ...6.9690sec
+15th train epoch finished ...6.8018sec
+16th train epoch finished ...6.8971sec
+17th train epoch finished ...6.9463sec
+18th train epoch finished ...6.9677sec
+19th train epoch finished ...7.0909sec
+20th train epoch finished ...7.1360sec
+21th train epoch finished ...6.9975sec
+22th train epoch finished ...6.9737sec
+23th train epoch finished ...6.8967sec
+24th train epoch finished ...6.8425sec
+25th train epoch finished ...7.0465sec
+26th train epoch finished ...6.9665sec
+27th train epoch finished ...6.9350sec
+28th train epoch finished ...7.0602sec
+29th train epoch finished ...7.0601sec
+30th train epoch finished ...6.9853sec
+31th train epoch finished ...6.9752sec
+32th train epoch finished ...6.9182sec
+33th train epoch finished ...6.9347sec
+34th train epoch finished ...6.9952sec
+35th train epoch finished ...6.9834sec
+36th train epoch finished ...7.0358sec
+37th train epoch finished ...7.0506sec
+38th train epoch finished ...6.9744sec
+39th train epoch finished ...6.8269sec
+40th train epoch finished ...6.9651sec
+41th train epoch finished ...7.0052sec
+42th train epoch finished ...7.1313sec
+43th train epoch finished ...7.0183sec
+44th train epoch finished ...6.8733sec
+45th train epoch finished ...7.0865sec
+46th train epoch finished ...6.9575sec
+47th train epoch finished ...7.1368sec
+48th train epoch finished ...7.0334sec
+49th train epoch finished ...6.9810sec
+50th train epoch finished ...6.9180sec
+51th train epoch finished ...6.9734sec
+52th train epoch finished ...7.1259sec
+53th train epoch finished ...6.9095sec
+54th train epoch finished ...6.8814sec
+55th train epoch finished ...6.9860sec
+56th train epoch finished ...6.9102sec
+57th train epoch finished ...6.9763sec
+58th train epoch finished ...6.9072sec
+59th train epoch finished ...6.9772sec
+60th train epoch finished ...6.9642sec
+61th train epoch finished ...7.0278sec
+62th train epoch finished ...6.9878sec
+63th train epoch finished ...6.9001sec
+64th train epoch finished ...7.2806sec
+65th train epoch finished ...7.0746sec
+66th train epoch finished ...6.9184sec
+67th train epoch finished ...6.8962sec
+68th train epoch finished ...7.0164sec
+69th train epoch finished ...6.8227sec
+70th train epoch finished ...6.9169sec
+71th train epoch finished ...7.0101sec
+72th train epoch finished ...6.9807sec
+73th train epoch finished ...6.9042sec
+74th train epoch finished ...6.9303sec
+75th train epoch finished ...7.0174sec
+76th train epoch finished ...7.1119sec
+77th train epoch finished ...6.9741sec
+78th train epoch finished ...6.8149sec
+79th train epoch finished ...6.8961sec
+80th train epoch finished ...7.1170sec
+81th train epoch finished ...7.0720sec
+82th train epoch finished ...6.8914sec
+83th train epoch finished ...7.0771sec
+84th train epoch finished ...6.9400sec
+85th train epoch finished ...7.0865sec
+86th train epoch finished ...6.9863sec
+87th train epoch finished ...7.0264sec
+88th train epoch finished ...6.9591sec
+89th train epoch finished ...6.9899sec
+90th train epoch finished ...7.1158sec
+91th train epoch finished ...6.8604sec
+92th train epoch finished ...6.9830sec
+93th train epoch finished ...7.1646sec
+94th train epoch finished ...7.3726sec
+95th train epoch finished ...6.9393sec
+96th train epoch finished ...6.9445sec
+97th train epoch finished ...7.0929sec
+98th train epoch finished ...6.9823sec
+99th train epoch finished ...6.9198sec
+100th train epoch finished ...6.9351sec
+101th train epoch finished ...7.0375sec
+102th train epoch finished ...6.9085sec
+103th train epoch finished ...6.9135sec
+104th train epoch finished ...6.8711sec
+105th train epoch finished ...6.8679sec
+106th train epoch finished ...7.1222sec
+107th train epoch finished ...6.9653sec
+108th train epoch finished ...6.9096sec
+109th train epoch finished ...6.9749sec
+110th train epoch finished ...7.1204sec
+111th train epoch finished ...6.8674sec
+112th train epoch finished ...6.9895sec
+113th train epoch finished ...6.8920sec
+114th train epoch finished ...7.0141sec
+115th train epoch finished ...7.0206sec
+116th train epoch finished ...6.8799sec
+117th train epoch finished ...7.0128sec
+118th train epoch finished ...7.0617sec
+119th train epoch finished ...7.0572sec
+120th train epoch finished ...6.8756sec
+121th train epoch finished ...6.9596sec
+122th train epoch finished ...6.9762sec
+123th train epoch finished ...6.9379sec
+124th train epoch finished ...6.9726sec
+125th train epoch finished ...6.8846sec
+126th train epoch finished ...7.0755sec
+127th train epoch finished ...6.9520sec
+128th train epoch finished ...6.8454sec
+129th train epoch finished ...6.9300sec
+130th train epoch finished ...7.0793sec
+131th train epoch finished ...7.1311sec
+132th train epoch finished ...6.9475sec
+133th train epoch finished ...6.9235sec
+134th train epoch finished ...7.0741sec
+135th train epoch finished ...6.9248sec
+136th train epoch finished ...7.1765sec
+137th train epoch finished ...7.0792sec
+138th train epoch finished ...7.0991sec
+139th train epoch finished ...7.0304sec
+140th train epoch finished ...7.0671sec
+141th train epoch finished ...6.8652sec
+142th train epoch finished ...7.0428sec
+143th train epoch finished ...7.1919sec
+144th train epoch finished ...6.9787sec
+145th train epoch finished ...7.0027sec
+146th train epoch finished ...6.8088sec
+147th train epoch finished ...7.0682sec
+148th train epoch finished ...7.0422sec
+149th train epoch finished ...6.9932sec
+Training has finished.
+Without projection head
+all_prev_train_features_wo_head.shape: (5000, 2048)
+annoy_index rebuild time: 15.0656
+0th validation set size: 1000
+0-th task, 0-th test set accuracy : 0.4540
+1th validation set size: 1000
+0-th task, 1-th test set accuracy : 0.0000
+2th validation set size: 1000
+0-th task, 2-th test set accuracy : 0.0000
+3th validation set size: 1000
+0-th task, 3-th test set accuracy : 0.0000
+4th validation set size: 1000
+0-th task, 4-th test set accuracy : 0.0000
+5th validation set size: 1000
+0-th task, 5-th test set accuracy : 0.0000
+6th validation set size: 1000
+0-th task, 6-th test set accuracy : 0.0000
+7th validation set size: 1000
+0-th task, 7-th test set accuracy : 0.0000
+8th validation set size: 1000
+0-th task, 8-th test set accuracy : 0.0000
+9th validation set size: 1000
+0-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 1, len train dataset: 5000
+Joint training begin in 1th task
+Dataset iteration works!
+0th train epoch finished ...14.2390sec
+1th train epoch finished ...14.1167sec
+2th train epoch finished ...13.7243sec
+3th train epoch finished ...13.8658sec
+4th train epoch finished ...13.9090sec
+5th train epoch finished ...13.8666sec
+6th train epoch finished ...13.8073sec
+7th train epoch finished ...13.7938sec
+8th train epoch finished ...13.6168sec
+9th train epoch finished ...13.5262sec
+10th train epoch finished ...13.6572sec
+11th train epoch finished ...13.4746sec
+12th train epoch finished ...13.5724sec
+13th train epoch finished ...13.6372sec
+14th train epoch finished ...13.7386sec
+15th train epoch finished ...13.7444sec
+16th train epoch finished ...13.6946sec
+17th train epoch finished ...13.9413sec
+18th train epoch finished ...13.7289sec
+19th train epoch finished ...13.8186sec
+20th train epoch finished ...13.7696sec
+21th train epoch finished ...13.4467sec
+22th train epoch finished ...13.8159sec
+23th train epoch finished ...13.6941sec
+24th train epoch finished ...14.0492sec
+25th train epoch finished ...13.9054sec
+26th train epoch finished ...13.8655sec
+27th train epoch finished ...13.6936sec
+28th train epoch finished ...13.9811sec
+29th train epoch finished ...13.8452sec
+30th train epoch finished ...13.8690sec
+31th train epoch finished ...13.6826sec
+32th train epoch finished ...13.7308sec
+33th train epoch finished ...13.6807sec
+34th train epoch finished ...13.7961sec
+35th train epoch finished ...13.8325sec
+36th train epoch finished ...13.5614sec
+37th train epoch finished ...13.6492sec
+38th train epoch finished ...13.8279sec
+39th train epoch finished ...13.8524sec
+40th train epoch finished ...13.8207sec
+41th train epoch finished ...13.8846sec
+42th train epoch finished ...13.6966sec
+43th train epoch finished ...13.5997sec
+44th train epoch finished ...14.2548sec
+45th train epoch finished ...13.6490sec
+46th train epoch finished ...13.7227sec
+47th train epoch finished ...13.6575sec
+48th train epoch finished ...13.8946sec
+49th train epoch finished ...13.6598sec
+50th train epoch finished ...13.7435sec
+51th train epoch finished ...13.8133sec
+52th train epoch finished ...13.7587sec
+53th train epoch finished ...13.7528sec
+54th train epoch finished ...14.0045sec
+55th train epoch finished ...13.6775sec
+56th train epoch finished ...13.7673sec
+57th train epoch finished ...13.7764sec
+58th train epoch finished ...13.7679sec
+59th train epoch finished ...13.7077sec
+60th train epoch finished ...13.8756sec
+61th train epoch finished ...13.8300sec
+62th train epoch finished ...13.6523sec
+63th train epoch finished ...13.8691sec
+64th train epoch finished ...13.5473sec
+65th train epoch finished ...14.0590sec
+66th train epoch finished ...13.7572sec
+67th train epoch finished ...13.8305sec
+68th train epoch finished ...13.9113sec
+69th train epoch finished ...14.0552sec
+70th train epoch finished ...13.6946sec
+71th train epoch finished ...13.7300sec
+72th train epoch finished ...14.0750sec
+73th train epoch finished ...13.8535sec
+74th train epoch finished ...13.7226sec
+75th train epoch finished ...13.7312sec
+76th train epoch finished ...13.6972sec
+77th train epoch finished ...13.8060sec
+78th train epoch finished ...13.7504sec
+79th train epoch finished ...13.7079sec
+80th train epoch finished ...13.9782sec
+81th train epoch finished ...13.7238sec
+82th train epoch finished ...13.6675sec
+83th train epoch finished ...13.6874sec
+84th train epoch finished ...13.6810sec
+85th train epoch finished ...14.0454sec
+86th train epoch finished ...13.6074sec
+87th train epoch finished ...14.2138sec
+88th train epoch finished ...13.5701sec
+89th train epoch finished ...13.8756sec
+90th train epoch finished ...13.6132sec
+91th train epoch finished ...13.9539sec
+92th train epoch finished ...13.8985sec
+93th train epoch finished ...13.9320sec
+94th train epoch finished ...13.7903sec
+95th train epoch finished ...13.8068sec
+96th train epoch finished ...13.8514sec
+97th train epoch finished ...13.6424sec
+98th train epoch finished ...13.8668sec
+99th train epoch finished ...13.6771sec
+100th train epoch finished ...13.6386sec
+101th train epoch finished ...13.8461sec
+102th train epoch finished ...13.6220sec
+103th train epoch finished ...13.6810sec
+104th train epoch finished ...13.7958sec
+105th train epoch finished ...13.8448sec
+106th train epoch finished ...13.8551sec
+107th train epoch finished ...13.5191sec
+108th train epoch finished ...13.6838sec
+109th train epoch finished ...14.0201sec
+110th train epoch finished ...13.7482sec
+111th train epoch finished ...13.8151sec
+112th train epoch finished ...13.7893sec
+113th train epoch finished ...13.7337sec
+114th train epoch finished ...13.7575sec
+115th train epoch finished ...13.9208sec
+116th train epoch finished ...13.6123sec
+117th train epoch finished ...13.8234sec
+118th train epoch finished ...13.6747sec
+119th train epoch finished ...13.8009sec
+120th train epoch finished ...13.7579sec
+121th train epoch finished ...13.8903sec
+122th train epoch finished ...13.7990sec
+123th train epoch finished ...13.8140sec
+124th train epoch finished ...14.0188sec
+125th train epoch finished ...13.5421sec
+126th train epoch finished ...13.9163sec
+127th train epoch finished ...13.6517sec
+128th train epoch finished ...13.8566sec
+129th train epoch finished ...13.8695sec
+130th train epoch finished ...14.1313sec
+131th train epoch finished ...13.8758sec
+132th train epoch finished ...13.8668sec
+133th train epoch finished ...13.5734sec
+134th train epoch finished ...13.9591sec
+135th train epoch finished ...13.7222sec
+136th train epoch finished ...13.9216sec
+137th train epoch finished ...13.6441sec
+138th train epoch finished ...13.8109sec
+139th train epoch finished ...13.5936sec
+140th train epoch finished ...13.7562sec
+141th train epoch finished ...13.9220sec
+142th train epoch finished ...13.6148sec
+143th train epoch finished ...13.9140sec
+144th train epoch finished ...13.7014sec
+145th train epoch finished ...13.9056sec
+146th train epoch finished ...13.6995sec
+147th train epoch finished ...13.8614sec
+148th train epoch finished ...13.6386sec
+149th train epoch finished ...13.6783sec
+Training has finished.
+Without projection head
+all_prev_train_features_wo_head.shape: (10000, 2048)
+annoy_index rebuild time: 55.4418
+0th validation set size: 1000
+1-th task, 0-th test set accuracy : 0.4370
+1th validation set size: 1000
+1-th task, 1-th test set accuracy : 0.3240
+2th validation set size: 1000
+1-th task, 2-th test set accuracy : 0.0000
+3th validation set size: 1000
+1-th task, 3-th test set accuracy : 0.0000
+4th validation set size: 1000
+1-th task, 4-th test set accuracy : 0.0000
+5th validation set size: 1000
+1-th task, 5-th test set accuracy : 0.0000
+6th validation set size: 1000
+1-th task, 6-th test set accuracy : 0.0000
+7th validation set size: 1000
+1-th task, 7-th test set accuracy : 0.0000
+8th validation set size: 1000
+1-th task, 8-th test set accuracy : 0.0000
+9th validation set size: 1000
+1-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 2, len train dataset: 5000
+Joint training begin in 2th task
+Dataset iteration works!
+0th train epoch finished ...20.1237sec
+1th train epoch finished ...20.4306sec
+2th train epoch finished ...20.3571sec
+3th train epoch finished ...20.9895sec
+4th train epoch finished ...20.2252sec
+5th train epoch finished ...20.2826sec
+6th train epoch finished ...20.4224sec
+7th train epoch finished ...20.4411sec
+8th train epoch finished ...20.2625sec
+9th train epoch finished ...20.5195sec
+10th train epoch finished ...20.2792sec
+11th train epoch finished ...20.2847sec
+12th train epoch finished ...20.4274sec
+13th train epoch finished ...20.4509sec
+14th train epoch finished ...20.5124sec
+15th train epoch finished ...20.3896sec
+16th train epoch finished ...20.3995sec
+17th train epoch finished ...20.0365sec
+18th train epoch finished ...20.5718sec
+19th train epoch finished ...20.6919sec
+20th train epoch finished ...20.4131sec
+21th train epoch finished ...20.3760sec
+22th train epoch finished ...20.6535sec
+23th train epoch finished ...20.2848sec
+24th train epoch finished ...20.5222sec
+25th train epoch finished ...20.0902sec
+26th train epoch finished ...20.7491sec
+27th train epoch finished ...20.0857sec
+28th train epoch finished ...20.6626sec
+29th train epoch finished ...20.3889sec
+30th train epoch finished ...20.4911sec
+31th train epoch finished ...20.4657sec
+32th train epoch finished ...20.8719sec
+33th train epoch finished ...20.6961sec
+34th train epoch finished ...20.4275sec
+35th train epoch finished ...20.2836sec
+36th train epoch finished ...20.6202sec
+37th train epoch finished ...20.1864sec
+38th train epoch finished ...20.5949sec
+39th train epoch finished ...20.3710sec
+40th train epoch finished ...20.4880sec
+41th train epoch finished ...20.5099sec
+42th train epoch finished ...20.1869sec
+43th train epoch finished ...20.2337sec
+44th train epoch finished ...20.6363sec
+45th train epoch finished ...20.3971sec
+46th train epoch finished ...20.4146sec
+47th train epoch finished ...20.3658sec
+48th train epoch finished ...20.5217sec
+49th train epoch finished ...20.1375sec
+50th train epoch finished ...20.7765sec
+51th train epoch finished ...20.4260sec
+52th train epoch finished ...20.4084sec
+53th train epoch finished ...20.4304sec
+54th train epoch finished ...20.5660sec
+55th train epoch finished ...20.4439sec
+56th train epoch finished ...20.4012sec
+57th train epoch finished ...20.3360sec
+58th train epoch finished ...20.2358sec
+59th train epoch finished ...20.4891sec
+60th train epoch finished ...20.4559sec
+61th train epoch finished ...20.4681sec
+62th train epoch finished ...20.7741sec
+63th train epoch finished ...20.7345sec
+64th train epoch finished ...20.1338sec
+65th train epoch finished ...20.4311sec
+66th train epoch finished ...20.6864sec
+67th train epoch finished ...20.5780sec
+68th train epoch finished ...20.4765sec
+69th train epoch finished ...20.3388sec
+70th train epoch finished ...20.5206sec
+71th train epoch finished ...20.3108sec
+72th train epoch finished ...20.6003sec
+73th train epoch finished ...20.4266sec
+74th train epoch finished ...20.3032sec
+75th train epoch finished ...20.3396sec
+76th train epoch finished ...20.4603sec
+77th train epoch finished ...20.5555sec
+78th train epoch finished ...20.1978sec
+79th train epoch finished ...20.5746sec
+80th train epoch finished ...20.4176sec
+81th train epoch finished ...20.3934sec
+82th train epoch finished ...20.4277sec
+83th train epoch finished ...20.5167sec
+84th train epoch finished ...20.1912sec
+85th train epoch finished ...20.4314sec
+86th train epoch finished ...20.4258sec
+87th train epoch finished ...20.2037sec
+88th train epoch finished ...20.3727sec
+89th train epoch finished ...20.4899sec
+90th train epoch finished ...20.3164sec
+91th train epoch finished ...20.9370sec
+92th train epoch finished ...20.5086sec
+93th train epoch finished ...20.0802sec
+94th train epoch finished ...20.3460sec
+95th train epoch finished ...20.2849sec
+96th train epoch finished ...20.1386sec
+97th train epoch finished ...20.2185sec
+98th train epoch finished ...20.6315sec
+99th train epoch finished ...20.4095sec
+100th train epoch finished ...20.5922sec
+101th train epoch finished ...20.2085sec
+102th train epoch finished ...20.0490sec
+103th train epoch finished ...20.7741sec
+104th train epoch finished ...20.4860sec
+105th train epoch finished ...20.3924sec
+106th train epoch finished ...20.4411sec
+107th train epoch finished ...20.3231sec
+108th train epoch finished ...20.4020sec
+109th train epoch finished ...20.2561sec
+110th train epoch finished ...20.5085sec
+111th train epoch finished ...20.5909sec
+112th train epoch finished ...20.7538sec
+113th train epoch finished ...20.1784sec
+114th train epoch finished ...20.5480sec
+115th train epoch finished ...20.5749sec
+116th train epoch finished ...20.6701sec
+117th train epoch finished ...20.5616sec
+118th train epoch finished ...20.5466sec
+119th train epoch finished ...20.5763sec
+120th train epoch finished ...20.7460sec
+121th train epoch finished ...20.5239sec
+122th train epoch finished ...20.7419sec
+123th train epoch finished ...20.2233sec
+124th train epoch finished ...20.4105sec
+125th train epoch finished ...20.4404sec
+126th train epoch finished ...20.3296sec
+127th train epoch finished ...20.4793sec
+128th train epoch finished ...20.3855sec
+129th train epoch finished ...20.5821sec
+130th train epoch finished ...20.3847sec
+131th train epoch finished ...20.4747sec
+132th train epoch finished ...20.4878sec
+133th train epoch finished ...20.4474sec
+134th train epoch finished ...20.5162sec
+135th train epoch finished ...20.3976sec
+136th train epoch finished ...20.4500sec
+137th train epoch finished ...20.4284sec
+138th train epoch finished ...20.2652sec
+139th train epoch finished ...20.2543sec
+140th train epoch finished ...19.9954sec
+141th train epoch finished ...20.3396sec
+142th train epoch finished ...20.3018sec
+143th train epoch finished ...20.2958sec
+144th train epoch finished ...20.2159sec
+145th train epoch finished ...20.2775sec
+146th train epoch finished ...20.2202sec
+147th train epoch finished ...20.1456sec
+148th train epoch finished ...20.1397sec
+149th train epoch finished ...20.4018sec
+Training has finished.
+Without projection head
+all_prev_train_features_wo_head.shape: (15000, 2048)
+annoy_index rebuild time: 104.6075
+0th validation set size: 1000
+2-th task, 0-th test set accuracy : 0.3960
+1th validation set size: 1000
+2-th task, 1-th test set accuracy : 0.3280
+2th validation set size: 1000
+2-th task, 2-th test set accuracy : 0.4570
+3th validation set size: 1000
+2-th task, 3-th test set accuracy : 0.0000
+4th validation set size: 1000
+2-th task, 4-th test set accuracy : 0.0000
+5th validation set size: 1000
+2-th task, 5-th test set accuracy : 0.0000
+6th validation set size: 1000
+2-th task, 6-th test set accuracy : 0.0000
+7th validation set size: 1000
+2-th task, 7-th test set accuracy : 0.0000
+8th validation set size: 1000
+2-th task, 8-th test set accuracy : 0.0000
+9th validation set size: 1000
+2-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 3, len train dataset: 5000
+Joint training begin in 3th task
+Dataset iteration works!
+0th train epoch finished ...27.2504sec
+1th train epoch finished ...27.2346sec
+2th train epoch finished ...26.7693sec
+3th train epoch finished ...27.0645sec
+4th train epoch finished ...26.7065sec
+5th train epoch finished ...27.0440sec
+6th train epoch finished ...26.9275sec
+7th train epoch finished ...26.9887sec
+8th train epoch finished ...26.9769sec
+9th train epoch finished ...27.4859sec
+10th train epoch finished ...26.7131sec
+11th train epoch finished ...26.5014sec
+12th train epoch finished ...26.6431sec
+13th train epoch finished ...27.1952sec
+14th train epoch finished ...26.5775sec
+15th train epoch finished ...27.0880sec
+16th train epoch finished ...27.0305sec
+17th train epoch finished ...26.6084sec
+18th train epoch finished ...26.9822sec
+19th train epoch finished ...26.9571sec
+20th train epoch finished ...27.1748sec
+21th train epoch finished ...27.2804sec
+22th train epoch finished ...27.0805sec
+23th train epoch finished ...27.0358sec
+24th train epoch finished ...26.7065sec
+25th train epoch finished ...27.0226sec
+26th train epoch finished ...27.0692sec
+27th train epoch finished ...26.9392sec
+28th train epoch finished ...27.4854sec
+29th train epoch finished ...26.6573sec
+30th train epoch finished ...26.9683sec
+31th train epoch finished ...27.0390sec
+32th train epoch finished ...26.6668sec
+33th train epoch finished ...27.0098sec
+34th train epoch finished ...26.6948sec
+35th train epoch finished ...27.1834sec
+36th train epoch finished ...26.7988sec
+37th train epoch finished ...26.9047sec
+38th train epoch finished ...26.8770sec
+39th train epoch finished ...26.8570sec
+40th train epoch finished ...26.9138sec
+41th train epoch finished ...27.0654sec
+42th train epoch finished ...27.1297sec
+43th train epoch finished ...27.0361sec
+44th train epoch finished ...27.1724sec
+45th train epoch finished ...26.8796sec
+46th train epoch finished ...26.3783sec
+47th train epoch finished ...26.5634sec
+48th train epoch finished ...27.3877sec
+49th train epoch finished ...27.4420sec
+50th train epoch finished ...26.7961sec
+51th train epoch finished ...26.6967sec
+52th train epoch finished ...26.5479sec
+53th train epoch finished ...26.9042sec
+54th train epoch finished ...26.8648sec
+55th train epoch finished ...27.1445sec
+56th train epoch finished ...26.7053sec
+57th train epoch finished ...26.9425sec
+58th train epoch finished ...27.2394sec
+59th train epoch finished ...27.1837sec
+60th train epoch finished ...26.8357sec
+61th train epoch finished ...26.9337sec
+62th train epoch finished ...26.7065sec
+63th train epoch finished ...26.8959sec
+64th train epoch finished ...27.0142sec
+65th train epoch finished ...27.1179sec
+66th train epoch finished ...26.8485sec
+67th train epoch finished ...27.1539sec
+68th train epoch finished ...26.5990sec
+69th train epoch finished ...26.9098sec
+70th train epoch finished ...27.0231sec
+71th train epoch finished ...26.9683sec
+72th train epoch finished ...26.7014sec
+73th train epoch finished ...27.2391sec
+74th train epoch finished ...27.1333sec
+75th train epoch finished ...26.7737sec
+76th train epoch finished ...26.9540sec
+77th train epoch finished ...26.8628sec
+78th train epoch finished ...27.2923sec
+79th train epoch finished ...26.9276sec
+80th train epoch finished ...26.8094sec
+81th train epoch finished ...26.8481sec
+82th train epoch finished ...26.5759sec
+83th train epoch finished ...27.2996sec
+84th train epoch finished ...27.0583sec
+85th train epoch finished ...26.7636sec
+86th train epoch finished ...27.1127sec
+87th train epoch finished ...27.3102sec
+88th train epoch finished ...26.8769sec
+89th train epoch finished ...26.8660sec
+90th train epoch finished ...26.7869sec
+91th train epoch finished ...26.7277sec
+92th train epoch finished ...27.0184sec
+93th train epoch finished ...27.2308sec
+94th train epoch finished ...27.0780sec
+95th train epoch finished ...27.2036sec
+96th train epoch finished ...26.9810sec
+97th train epoch finished ...26.7302sec
+98th train epoch finished ...26.9999sec
+99th train epoch finished ...26.9276sec
+100th train epoch finished ...27.0111sec
+101th train epoch finished ...26.8967sec
+102th train epoch finished ...26.7421sec
+103th train epoch finished ...26.8356sec
+104th train epoch finished ...26.4470sec
+105th train epoch finished ...27.4064sec
+106th train epoch finished ...26.7400sec
+107th train epoch finished ...26.8271sec
+108th train epoch finished ...26.8102sec
+109th train epoch finished ...27.3071sec
+110th train epoch finished ...26.8654sec
+111th train epoch finished ...27.1453sec
+112th train epoch finished ...27.1428sec
+113th train epoch finished ...26.8818sec
+114th train epoch finished ...27.2272sec
+115th train epoch finished ...26.9192sec
+116th train epoch finished ...27.0985sec
+117th train epoch finished ...27.3010sec
+118th train epoch finished ...26.9544sec
+119th train epoch finished ...26.6223sec
+120th train epoch finished ...27.6880sec
+121th train epoch finished ...27.2792sec
+122th train epoch finished ...26.9583sec
+123th train epoch finished ...26.5016sec
+124th train epoch finished ...26.9019sec
+125th train epoch finished ...26.6303sec
+126th train epoch finished ...27.1174sec
+127th train epoch finished ...27.0656sec
+128th train epoch finished ...26.7895sec
+129th train epoch finished ...27.0753sec
+130th train epoch finished ...26.4909sec
+131th train epoch finished ...27.0570sec
+132th train epoch finished ...26.7294sec
+133th train epoch finished ...26.7007sec
+134th train epoch finished ...27.2046sec
+135th train epoch finished ...27.0821sec
+136th train epoch finished ...26.7853sec
+137th train epoch finished ...27.0122sec
+138th train epoch finished ...27.4301sec
+139th train epoch finished ...27.1529sec
+140th train epoch finished ...26.6276sec
+141th train epoch finished ...26.8398sec
+142th train epoch finished ...26.8591sec
+143th train epoch finished ...26.8950sec
+144th train epoch finished ...26.6302sec
+145th train epoch finished ...26.9691sec
+146th train epoch finished ...26.6555sec
+147th train epoch finished ...27.0361sec
+148th train epoch finished ...27.1498sec
+149th train epoch finished ...27.2672sec
+Training has finished.
+Without projection head
+all_prev_train_features_wo_head.shape: (20000, 2048)
+annoy_index rebuild time: 160.7171
+0th validation set size: 1000
+3-th task, 0-th test set accuracy : 0.3840
+1th validation set size: 1000
+3-th task, 1-th test set accuracy : 0.3150
+2th validation set size: 1000
+3-th task, 2-th test set accuracy : 0.4260
+3th validation set size: 1000
+3-th task, 3-th test set accuracy : 0.2920
+4th validation set size: 1000
+3-th task, 4-th test set accuracy : 0.0000
+5th validation set size: 1000
+3-th task, 5-th test set accuracy : 0.0000
+6th validation set size: 1000
+3-th task, 6-th test set accuracy : 0.0000
+7th validation set size: 1000
+3-th task, 7-th test set accuracy : 0.0000
+8th validation set size: 1000
+3-th task, 8-th test set accuracy : 0.0000
+9th validation set size: 1000
+3-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 4, len train dataset: 5000
+Joint training begin in 4th task
+Dataset iteration works!
+0th train epoch finished ...33.5045sec
+1th train epoch finished ...33.2472sec
+2th train epoch finished ...33.5213sec
+3th train epoch finished ...33.0591sec
+4th train epoch finished ...33.6069sec
+5th train epoch finished ...33.3449sec
+6th train epoch finished ...33.6182sec
+7th train epoch finished ...33.6874sec
+8th train epoch finished ...34.0243sec
+9th train epoch finished ...33.9668sec
+10th train epoch finished ...33.2201sec
+11th train epoch finished ...33.4609sec
+12th train epoch finished ...33.1661sec
+13th train epoch finished ...33.9734sec
+14th train epoch finished ...33.1713sec
+15th train epoch finished ...33.2967sec
+16th train epoch finished ...33.3417sec
+17th train epoch finished ...33.6654sec
+18th train epoch finished ...33.3722sec
+19th train epoch finished ...33.6314sec
+20th train epoch finished ...33.3810sec
+21th train epoch finished ...33.5502sec
+22th train epoch finished ...33.9720sec
+23th train epoch finished ...33.8038sec
+24th train epoch finished ...33.6757sec
+25th train epoch finished ...33.6707sec
+26th train epoch finished ...33.7073sec
+27th train epoch finished ...32.8782sec
+28th train epoch finished ...33.4747sec
+29th train epoch finished ...33.2216sec
+30th train epoch finished ...33.9454sec
+31th train epoch finished ...33.3729sec
+32th train epoch finished ...33.9708sec
+33th train epoch finished ...33.8277sec
+34th train epoch finished ...33.7266sec
+35th train epoch finished ...33.6718sec
+36th train epoch finished ...33.3000sec
+37th train epoch finished ...33.3293sec
+38th train epoch finished ...33.3559sec
+39th train epoch finished ...33.4360sec
+40th train epoch finished ...33.4975sec
+41th train epoch finished ...33.4520sec
+42th train epoch finished ...33.9301sec
+43th train epoch finished ...33.4817sec
+44th train epoch finished ...33.9315sec
+45th train epoch finished ...33.8254sec
+46th train epoch finished ...33.2486sec
+47th train epoch finished ...33.0404sec
+48th train epoch finished ...33.9152sec
+49th train epoch finished ...33.5592sec
+50th train epoch finished ...33.9269sec
+51th train epoch finished ...33.4321sec
+52th train epoch finished ...33.5777sec
+53th train epoch finished ...33.9766sec
+54th train epoch finished ...33.5412sec
+55th train epoch finished ...32.9984sec
+56th train epoch finished ...33.5413sec
+57th train epoch finished ...33.1005sec
+58th train epoch finished ...33.8574sec
+59th train epoch finished ...33.6638sec
+60th train epoch finished ...33.4152sec
+61th train epoch finished ...33.4622sec
+62th train epoch finished ...33.7597sec
+63th train epoch finished ...33.4471sec
+64th train epoch finished ...33.3248sec
+65th train epoch finished ...33.3733sec
+66th train epoch finished ...33.1092sec
+67th train epoch finished ...33.5814sec
+68th train epoch finished ...33.4338sec
+69th train epoch finished ...33.3322sec
+70th train epoch finished ...33.7457sec
+71th train epoch finished ...33.9516sec
+72th train epoch finished ...33.1102sec
+73th train epoch finished ...33.0257sec
+74th train epoch finished ...33.3434sec
+75th train epoch finished ...33.7424sec
+76th train epoch finished ...33.6420sec
+77th train epoch finished ...33.0879sec
+78th train epoch finished ...33.4864sec
+79th train epoch finished ...33.3570sec
+80th train epoch finished ...33.4642sec
+81th train epoch finished ...33.5277sec
+82th train epoch finished ...33.2534sec
+83th train epoch finished ...33.5525sec
+84th train epoch finished ...33.7069sec
+85th train epoch finished ...33.9656sec
+86th train epoch finished ...34.0721sec
+87th train epoch finished ...34.1181sec
+88th train epoch finished ...33.4994sec
+89th train epoch finished ...33.8993sec
+90th train epoch finished ...33.7028sec
+91th train epoch finished ...33.3773sec
+92th train epoch finished ...33.0244sec
+93th train epoch finished ...33.4812sec
+94th train epoch finished ...33.7509sec
+95th train epoch finished ...33.5523sec
+96th train epoch finished ...33.3759sec
+97th train epoch finished ...33.2562sec
+98th train epoch finished ...33.5414sec
+99th train epoch finished ...33.6922sec
+100th train epoch finished ...34.0038sec
+101th train epoch finished ...33.2452sec
+102th train epoch finished ...33.4861sec
+103th train epoch finished ...33.4867sec
+104th train epoch finished ...34.1124sec
+105th train epoch finished ...33.8984sec
+106th train epoch finished ...33.3475sec
+107th train epoch finished ...33.7451sec
+108th train epoch finished ...33.6962sec
+109th train epoch finished ...33.6827sec
+110th train epoch finished ...33.9494sec
+111th train epoch finished ...33.6529sec
+112th train epoch finished ...33.3980sec
+113th train epoch finished ...33.8851sec
+114th train epoch finished ...33.3848sec
+115th train epoch finished ...33.4394sec
+116th train epoch finished ...33.5947sec
+117th train epoch finished ...33.3158sec
+118th train epoch finished ...33.3724sec
+119th train epoch finished ...33.6568sec
+120th train epoch finished ...33.1937sec
+121th train epoch finished ...33.7425sec
+122th train epoch finished ...33.5426sec
+123th train epoch finished ...33.7081sec
+124th train epoch finished ...33.9072sec
+125th train epoch finished ...33.5165sec
+126th train epoch finished ...33.4326sec
+127th train epoch finished ...33.6171sec
+128th train epoch finished ...33.4428sec
+129th train epoch finished ...32.8335sec
+130th train epoch finished ...33.4149sec
+131th train epoch finished ...33.8079sec
+132th train epoch finished ...33.5176sec
+133th train epoch finished ...34.1335sec
+134th train epoch finished ...33.3673sec
+135th train epoch finished ...33.5129sec
+136th train epoch finished ...33.5691sec
+137th train epoch finished ...33.3049sec
+138th train epoch finished ...33.3136sec
+139th train epoch finished ...33.9381sec
+140th train epoch finished ...33.7713sec
+141th train epoch finished ...34.0812sec
+142th train epoch finished ...33.9589sec
+143th train epoch finished ...33.5813sec
+144th train epoch finished ...33.0381sec
+145th train epoch finished ...33.3536sec
+146th train epoch finished ...33.5804sec
+147th train epoch finished ...33.5745sec
+148th train epoch finished ...33.0025sec
+149th train epoch finished ...33.7943sec
+Training has finished.
+Without projection head
+all_prev_train_features_wo_head.shape: (25000, 2048)
+annoy_index rebuild time: 216.4527
+0th validation set size: 1000
+4-th task, 0-th test set accuracy : 0.3790
+1th validation set size: 1000
+4-th task, 1-th test set accuracy : 0.2940
+2th validation set size: 1000
+4-th task, 2-th test set accuracy : 0.4570
+3th validation set size: 1000
+4-th task, 3-th test set accuracy : 0.3030
+4th validation set size: 1000
+4-th task, 4-th test set accuracy : 0.3700
+5th validation set size: 1000
+4-th task, 5-th test set accuracy : 0.0000
+6th validation set size: 1000
+4-th task, 6-th test set accuracy : 0.0000
+7th validation set size: 1000
+4-th task, 7-th test set accuracy : 0.0000
+8th validation set size: 1000
+4-th task, 8-th test set accuracy : 0.0000
+9th validation set size: 1000
+4-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 5, len train dataset: 5000
+Joint training begin in 5th task
+Dataset iteration works!
+0th train epoch finished ...40.4677sec
+1th train epoch finished ...40.4235sec
+2th train epoch finished ...39.9781sec
+3th train epoch finished ...39.6802sec
+4th train epoch finished ...40.3669sec
+5th train epoch finished ...40.3871sec
+6th train epoch finished ...39.5034sec
+7th train epoch finished ...39.7478sec
+8th train epoch finished ...40.5588sec
+9th train epoch finished ...40.4783sec
+10th train epoch finished ...39.5279sec
+11th train epoch finished ...40.7541sec
+12th train epoch finished ...39.9890sec
+13th train epoch finished ...40.3117sec
+14th train epoch finished ...40.4139sec
+15th train epoch finished ...40.1783sec
+16th train epoch finished ...40.2441sec
+17th train epoch finished ...40.3042sec
+18th train epoch finished ...39.9630sec
+19th train epoch finished ...40.2615sec
+20th train epoch finished ...39.4745sec
+21th train epoch finished ...39.9978sec
+22th train epoch finished ...40.1464sec
+23th train epoch finished ...40.2009sec
+24th train epoch finished ...39.9558sec
+25th train epoch finished ...40.3103sec
+26th train epoch finished ...40.6193sec
+27th train epoch finished ...39.7797sec
+28th train epoch finished ...39.6246sec
+29th train epoch finished ...40.6400sec
+30th train epoch finished ...40.5136sec
+31th train epoch finished ...40.1345sec
+32th train epoch finished ...40.4020sec
+33th train epoch finished ...40.1187sec
+34th train epoch finished ...40.4036sec
+35th train epoch finished ...40.3587sec
+36th train epoch finished ...40.5105sec
+37th train epoch finished ...40.7021sec
+38th train epoch finished ...40.6088sec
+39th train epoch finished ...40.2742sec
+40th train epoch finished ...40.0857sec
+41th train epoch finished ...40.1488sec
+42th train epoch finished ...40.2259sec
+43th train epoch finished ...39.9767sec
+44th train epoch finished ...40.6640sec
+45th train epoch finished ...40.2436sec
+46th train epoch finished ...40.7053sec
+47th train epoch finished ...40.7911sec
+48th train epoch finished ...40.7106sec
+49th train epoch finished ...40.3432sec
+50th train epoch finished ...39.5006sec
+51th train epoch finished ...39.8447sec
+52th train epoch finished ...39.8340sec
+53th train epoch finished ...40.2912sec
+54th train epoch finished ...40.4992sec
+55th train epoch finished ...40.3040sec
+56th train epoch finished ...40.9232sec
+57th train epoch finished ...39.9904sec
+58th train epoch finished ...40.3928sec
+59th train epoch finished ...39.9807sec
+60th train epoch finished ...39.9646sec
+61th train epoch finished ...40.5465sec
+62th train epoch finished ...40.1537sec
+63th train epoch finished ...39.9681sec
+64th train epoch finished ...40.6314sec
+65th train epoch finished ...40.2220sec
+66th train epoch finished ...40.6121sec
+67th train epoch finished ...40.2098sec
+68th train epoch finished ...40.0395sec
+69th train epoch finished ...40.2102sec
+70th train epoch finished ...39.8524sec
+71th train epoch finished ...40.6744sec
+72th train epoch finished ...39.8699sec
+73th train epoch finished ...39.9295sec
+74th train epoch finished ...40.2682sec
+75th train epoch finished ...40.1063sec
+76th train epoch finished ...40.3828sec
+77th train epoch finished ...40.3936sec
+78th train epoch finished ...39.9306sec
+79th train epoch finished ...40.0007sec
+80th train epoch finished ...40.2336sec
+81th train epoch finished ...40.3815sec
+82th train epoch finished ...39.9163sec
+83th train epoch finished ...40.3204sec
+84th train epoch finished ...40.4483sec
+85th train epoch finished ...39.6147sec
+86th train epoch finished ...40.6396sec
+87th train epoch finished ...39.9042sec
+88th train epoch finished ...40.5235sec
+89th train epoch finished ...39.8131sec
+90th train epoch finished ...40.5396sec
+91th train epoch finished ...39.9195sec
+92th train epoch finished ...41.0061sec
+93th train epoch finished ...40.4798sec
+94th train epoch finished ...40.1522sec
+95th train epoch finished ...40.4092sec
+96th train epoch finished ...40.3335sec
+97th train epoch finished ...40.6128sec
+98th train epoch finished ...39.8882sec
+99th train epoch finished ...40.2793sec
+100th train epoch finished ...40.5782sec
+101th train epoch finished ...40.2165sec
+102th train epoch finished ...40.7264sec
+103th train epoch finished ...39.9478sec
+104th train epoch finished ...40.1617sec
+105th train epoch finished ...40.5930sec
+106th train epoch finished ...39.5357sec
+107th train epoch finished ...39.9849sec
+108th train epoch finished ...39.8701sec
+109th train epoch finished ...40.5239sec
+110th train epoch finished ...40.4888sec
+111th train epoch finished ...40.0681sec
+112th train epoch finished ...40.0042sec
+113th train epoch finished ...39.6640sec
+114th train epoch finished ...40.4232sec
+115th train epoch finished ...40.7933sec
+116th train epoch finished ...40.0799sec
+117th train epoch finished ...40.6323sec
+118th train epoch finished ...39.7168sec
+119th train epoch finished ...40.5865sec
+120th train epoch finished ...40.8300sec
+121th train epoch finished ...40.5737sec
+122th train epoch finished ...40.0718sec
+123th train epoch finished ...40.6249sec
+124th train epoch finished ...39.6779sec
+125th train epoch finished ...40.3810sec
+126th train epoch finished ...40.1530sec
+127th train epoch finished ...40.3891sec
+128th train epoch finished ...40.2670sec
+129th train epoch finished ...40.6350sec
+130th train epoch finished ...40.4435sec
+131th train epoch finished ...39.7682sec
+132th train epoch finished ...40.2677sec
+133th train epoch finished ...40.7883sec
+134th train epoch finished ...40.2903sec
+135th train epoch finished ...40.0730sec
+136th train epoch finished ...40.3723sec
+137th train epoch finished ...40.2047sec
+138th train epoch finished ...40.1508sec
+139th train epoch finished ...40.4668sec
+140th train epoch finished ...40.2430sec
+141th train epoch finished ...40.2532sec
+142th train epoch finished ...40.6693sec
+143th train epoch finished ...40.1929sec
+144th train epoch finished ...40.2641sec
+145th train epoch finished ...40.7422sec
+146th train epoch finished ...40.5661sec
+147th train epoch finished ...40.5047sec
+148th train epoch finished ...40.5600sec
+149th train epoch finished ...39.7511sec
+Training has finished.
+Without projection head
+all_prev_train_features_wo_head.shape: (30000, 2048)
+annoy_index rebuild time: 274.7134
+0th validation set size: 1000
+5-th task, 0-th test set accuracy : 0.3740
+1th validation set size: 1000
+5-th task, 1-th test set accuracy : 0.2930
+2th validation set size: 1000
+5-th task, 2-th test set accuracy : 0.4470
+3th validation set size: 1000
+5-th task, 3-th test set accuracy : 0.2880
+4th validation set size: 1000
+5-th task, 4-th test set accuracy : 0.3330
+5th validation set size: 1000
+5-th task, 5-th test set accuracy : 0.3430
+6th validation set size: 1000
+5-th task, 6-th test set accuracy : 0.0000
+7th validation set size: 1000
+5-th task, 7-th test set accuracy : 0.0000
+8th validation set size: 1000
+5-th task, 8-th test set accuracy : 0.0000
+9th validation set size: 1000
+5-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 6, len train dataset: 5000
+Joint training begin in 6th task
+Dataset iteration works!
+0th train epoch finished ...46.5408sec
+1th train epoch finished ...46.8334sec
+2th train epoch finished ...47.0310sec
+3th train epoch finished ...47.2664sec
+4th train epoch finished ...46.6531sec
+5th train epoch finished ...46.7974sec
+6th train epoch finished ...46.7686sec
+7th train epoch finished ...46.9166sec
+8th train epoch finished ...46.6830sec
+9th train epoch finished ...47.1142sec
+10th train epoch finished ...46.7082sec
+11th train epoch finished ...46.8262sec
+12th train epoch finished ...46.7652sec
+13th train epoch finished ...46.3557sec
+14th train epoch finished ...46.9026sec
+15th train epoch finished ...47.1204sec
+16th train epoch finished ...46.2930sec
+17th train epoch finished ...47.1680sec
+18th train epoch finished ...46.0736sec
+19th train epoch finished ...46.4825sec
+20th train epoch finished ...47.1977sec
+21th train epoch finished ...47.2393sec
+22th train epoch finished ...47.1808sec
+23th train epoch finished ...46.5017sec
+24th train epoch finished ...46.4754sec
+25th train epoch finished ...46.8068sec
+26th train epoch finished ...46.3275sec
+27th train epoch finished ...46.8267sec
+28th train epoch finished ...47.0124sec
+29th train epoch finished ...46.5778sec
+30th train epoch finished ...46.7606sec
+31th train epoch finished ...46.6410sec
+32th train epoch finished ...46.6721sec
+33th train epoch finished ...46.9354sec
+34th train epoch finished ...46.3835sec
+35th train epoch finished ...47.1203sec
+36th train epoch finished ...47.2904sec
+37th train epoch finished ...47.0620sec
+38th train epoch finished ...46.5555sec
+39th train epoch finished ...46.5226sec
+40th train epoch finished ...46.3348sec
+41th train epoch finished ...47.1732sec
+42th train epoch finished ...46.3995sec
+43th train epoch finished ...46.6054sec
+44th train epoch finished ...47.1469sec
+45th train epoch finished ...46.4977sec
+46th train epoch finished ...46.6139sec
+47th train epoch finished ...47.1696sec
+48th train epoch finished ...47.0912sec
+49th train epoch finished ...46.5799sec
+50th train epoch finished ...46.3890sec
+51th train epoch finished ...47.2664sec
+52th train epoch finished ...46.9919sec
+53th train epoch finished ...46.6515sec
+54th train epoch finished ...47.0405sec
+55th train epoch finished ...47.0728sec
+56th train epoch finished ...46.9410sec
+57th train epoch finished ...47.3519sec
+58th train epoch finished ...47.2407sec
+59th train epoch finished ...47.5977sec
+60th train epoch finished ...46.5637sec
+61th train epoch finished ...46.9550sec
+62th train epoch finished ...46.8459sec
+63th train epoch finished ...46.8075sec
+64th train epoch finished ...46.1355sec
+65th train epoch finished ...46.9345sec
+66th train epoch finished ...46.2441sec
+67th train epoch finished ...46.6664sec
+68th train epoch finished ...46.7659sec
+69th train epoch finished ...46.9978sec
+70th train epoch finished ...47.3032sec
+71th train epoch finished ...47.2191sec
+72th train epoch finished ...47.3790sec
+73th train epoch finished ...46.7602sec
+74th train epoch finished ...46.8220sec
+75th train epoch finished ...46.7049sec
+76th train epoch finished ...46.9004sec
+77th train epoch finished ...46.9780sec
+78th train epoch finished ...47.3172sec
+79th train epoch finished ...46.3833sec
+80th train epoch finished ...46.8650sec
+81th train epoch finished ...46.3054sec
+82th train epoch finished ...47.1605sec
+83th train epoch finished ...46.9418sec
+84th train epoch finished ...46.8711sec
+85th train epoch finished ...46.9905sec
+86th train epoch finished ...47.5039sec
+87th train epoch finished ...46.8563sec
+88th train epoch finished ...46.7821sec
+89th train epoch finished ...46.6850sec
+90th train epoch finished ...46.8755sec
+91th train epoch finished ...46.9463sec
+92th train epoch finished ...47.5659sec
+93th train epoch finished ...46.6294sec
+94th train epoch finished ...47.2420sec
+95th train epoch finished ...46.3794sec
+96th train epoch finished ...47.1484sec
+97th train epoch finished ...47.1967sec
+98th train epoch finished ...47.2580sec
+99th train epoch finished ...47.2154sec
+100th train epoch finished ...46.7885sec
+101th train epoch finished ...47.1893sec
+102th train epoch finished ...46.7354sec
+103th train epoch finished ...47.2529sec
+104th train epoch finished ...46.8652sec
+105th train epoch finished ...46.9877sec
+106th train epoch finished ...46.3426sec
+107th train epoch finished ...47.4653sec
+108th train epoch finished ...46.7724sec
+109th train epoch finished ...47.4026sec
+110th train epoch finished ...46.6333sec
+111th train epoch finished ...47.0628sec
+112th train epoch finished ...47.5640sec
+113th train epoch finished ...47.1517sec
+114th train epoch finished ...46.8491sec
+115th train epoch finished ...46.8158sec
+116th train epoch finished ...46.8485sec
+117th train epoch finished ...46.6459sec
+118th train epoch finished ...46.7008sec
+119th train epoch finished ...46.0122sec
+120th train epoch finished ...46.8509sec
+121th train epoch finished ...47.1020sec
+122th train epoch finished ...47.3826sec
+123th train epoch finished ...47.1002sec
+124th train epoch finished ...47.2810sec
+125th train epoch finished ...46.7152sec
+126th train epoch finished ...46.6971sec
+127th train epoch finished ...46.9375sec
+128th train epoch finished ...46.3898sec
+129th train epoch finished ...47.1405sec
+130th train epoch finished ...46.3895sec
+131th train epoch finished ...46.3594sec
+132th train epoch finished ...47.2318sec
+133th train epoch finished ...46.5649sec
+134th train epoch finished ...47.2749sec
+135th train epoch finished ...46.8448sec
+136th train epoch finished ...46.5945sec
+137th train epoch finished ...46.9679sec
+138th train epoch finished ...47.5398sec
+139th train epoch finished ...46.8018sec
+140th train epoch finished ...46.7413sec
+141th train epoch finished ...46.9429sec
+142th train epoch finished ...47.0757sec
+143th train epoch finished ...46.4352sec
+144th train epoch finished ...46.3927sec
+145th train epoch finished ...46.4791sec
+146th train epoch finished ...47.5382sec
+147th train epoch finished ...46.1386sec
+148th train epoch finished ...47.0871sec
+149th train epoch finished ...46.0995sec
+Training has finished.
+Without projection head
+all_prev_train_features_wo_head.shape: (35000, 2048)
+annoy_index rebuild time: 348.5958
+0th validation set size: 1000
+6-th task, 0-th test set accuracy : 0.3450
+1th validation set size: 1000
+6-th task, 1-th test set accuracy : 0.2750
+2th validation set size: 1000
+6-th task, 2-th test set accuracy : 0.4180
+3th validation set size: 1000
+6-th task, 3-th test set accuracy : 0.2850
+4th validation set size: 1000
+6-th task, 4-th test set accuracy : 0.3270
+5th validation set size: 1000
+6-th task, 5-th test set accuracy : 0.3300
+6th validation set size: 1000
+6-th task, 6-th test set accuracy : 0.3750
+7th validation set size: 1000
+6-th task, 7-th test set accuracy : 0.0000
+8th validation set size: 1000
+6-th task, 8-th test set accuracy : 0.0000
+9th validation set size: 1000
+6-th task, 9-th test set accuracy : 0.0000
+
+Current task number: 7, len train dataset: 5000
+Without projection head
+=== Results summary ===
+Accuracy after 0-th task :  0.454 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+Accuracy after 1-th task :  0.437 0.324 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+Accuracy after 2-th task :  0.396 0.328 0.457 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+Accuracy after 3-th task :  0.384 0.315 0.426 0.292 0.0 0.0 0.0 0.0 0.0 0.0 
+Accuracy after 4-th task :  0.379 0.294 0.457 0.303 0.37 0.0 0.0 0.0 0.0 0.0 
+Accuracy after 5-th task :  0.374 0.293 0.447 0.288 0.333 0.343 0.0 0.0 0.0 0.0 
+Accuracy after 6-th task :  0.345 0.275 0.418 0.285 0.327 0.33 0.375 0.0 0.0 0.0 
+=== Results summary2 ===
+0.454
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+
+0.437
+0.324
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+
+0.396
+0.328
+0.457
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+
+0.384
+0.315
+0.426
+0.292
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+
+0.379
+0.294
+0.457
+0.303
+0.37
+0.0
+0.0
+0.0
+0.0
+0.0
+
+0.374
+0.293
+0.447
+0.288
+0.333
+0.343
+0.0
+0.0
+0.0
+0.0
+
+0.345
+0.275
+0.418
+0.285
+0.327
+0.33
+0.375
+0.0
+0.0
+0.0
+
+Total training time: 31289.9830

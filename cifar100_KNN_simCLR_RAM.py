@@ -21,13 +21,9 @@ from SimCLR.exceptions.exceptions import InvalidDatasetSelection
 from SimCLR.models.resnet_simclr import ResNetSimCLR
 from SimCLR.simclr import SimCLR
 from torch.cuda.amp import GradScaler, autocast
-import os
-import tarfile
 from PIL import Image
+import os
 
-
-def tensor_to_pil(tensor):
-    return Image.fromarray(tensor.mul(255).byte().permute(1, 2, 0).numpy())
 
 
 
@@ -49,47 +45,6 @@ def get_original_pipeline_transform(size):
     return data_transforms
 
 
-class TensorDatasetFromTar_custom(Dataset):
-    def __init__(self, tar_file, transform=None):
-        self.tar_file = tar_file
-        self.transform = transform
-        self.members = []
-        self.label_name = [0]*1000
-        self.label_dict = {}
-        self.label_cnt = 0
-        m=0
-        with tarfile.open(tar_file, 'r') as tar:
-            # Collect all members ending with ".JPEG" assuming they are tensors
-            for member in tar.getmembers():
-                if(member.name.endswith(".JPEG")):
-                    m+=1
-                    self.members.append(member.name)
-                    class_name=member.name.split('/')[0]
-                    if(class_name not in self.label_dict):
-                        self.label_dict[class_name]=self.label_cnt
-                        self.label_name[self.label_cnt]=class_name
-                        self.label_cnt+=1
-        print(f"Total label count : {self.label_cnt}",flush=True)
-        print(f"members count: {len(self.members)}",flush=True)
-
-    def __len__(self):
-        return len(self.members)
-
-    def __getitem__(self, idx):
-        with tarfile.open(self.tar_file, 'r') as tar:
-            member = self.members[idx]
-            # Load the tensor
-            file = tar.extractfile(member)
-            img = torch.load(file)
-            img = tensor_to_pil(img)
-            # Apply transform if provided
-            if self.transform:
-                img = self.transform(img)
-            # Extract the label from the directory name
-            class_name = member.split('/')[0]
-            # print(f"sample class_name: {class_name}")
-            label = int(self.label_dict[class_name])  # You might need to map this correctly based on your setup
-            return img, label
 
 
 
@@ -149,28 +104,44 @@ def main(args):
 
 
     elif args.dataset=="ImageNet":
+        class ImageNetInMemory(Dataset):
+            def __init__(self, root_dir, transform=None):
+                self.transform = transform
+                self.data = []
+                self.labels = []
+
+                # Load all images into RAM
+                for class_index, class_name in enumerate(os.listdir(root_dir)):
+                    class_path = os.path.join(root_dir, class_name)
+                    if os.path.isdir(class_path):
+                        for image_name in os.listdir(class_path):
+                            image_path = os.path.join(class_path, image_name)
+                            try:
+                                image = Image.open(image_path).convert("RGB")  # Convert to RGB
+                                
+                                self.data.append(image)
+                                self.labels.append(class_index)
+                            except Exception as e:
+                                print(f"Error loading {image_path}: {e}")
+
+            def __len__(self):
+                return len(self.data)
+
+            def __getitem__(self, index):
+                if self.transform:
+                    image = self.transform(self.data[index])
+                else:
+                    image = self.data[index]
+                return image, self.labels[index]
+
 
         # trainset=datasets.ImageFolder(root='/fs/ess/PAS1289/ImageNet/imagenet/train', transform=ContrastiveLearningViewGenerator(get_simclr_pipeline_transform(args.in_size),2))
         # trainset_original = datasets.ImageFolder(root='/fs/ess/PAS1289/ImageNet/imagenet/train', transform=get_original_pipeline_transform(args.in_size))
         # testset_original = datasets.ImageFolder(root='/fs/ess/PAS1289/ImageNet/imagenet/val', transform=get_original_pipeline_transform(args.in_size))
-
-        # testset_original = TensorDatasetFromTar_custom('/users/PAS1289/oiocha/Persistent_Message_Passing/Continual/data/ImageNet/valid_images.tar',ContrastiveLearningViewGenerator(get_original_pipeline_transform(args.in_size)))
-        # print(f"len(testset_original) : {testset_original.__len__()}",flush=True)
-        # print(type(testset_original))
-        # temp_loader=DataLoader(testset_original,batch_size=args.batch_size, num_workers=2, drop_last=True)
-        # print(f"len(temp_loader.dataset) : {len(temp_loader.dataset)}")
-        # cntt=0
-        # for i,(img,label) in enumerate(temp_loader):
-        #     if cntt>10:
-        #         break
-        #     print(f"is it work? {i}, {type(img)}, {label}",flush=True)
-        #     cntt+=1
-        trainset_original = TensorDatasetFromTar_custom('/users/PAS1289/oiocha/Persistent_Message_Passing/Continual/data/ImageNet/train_images.tar',ContrastiveLearningViewGenerator(get_original_pipeline_transform(args.in_size)))
-        trainset = TensorDatasetFromTar_custom('/users/PAS1289/oiocha/Persistent_Message_Passing/Continual/data/ImageNet/train_images.tar',ContrastiveLearningViewGenerator(get_simclr_pipeline_transform(args.in_size),2))
-        testset_original = TensorDatasetFromTar_custom('/users/PAS1289/oiocha/Persistent_Message_Passing/Continual/data/ImageNet/valid_images.tar',ContrastiveLearningViewGenerator(get_original_pipeline_transform(args.in_size)))
-
-
-
+        
+        trainset=ImageNetInMemory(root_dir='/fs/ess/PAS1289/ImageNet/imagenet/train', transform=ContrastiveLearningViewGenerator(get_simclr_pipeline_transform(args.in_size),2))
+        trainset_original = ImageNetInMemory(root_dir='/fs/ess/PAS1289/ImageNet/imagenet/train', transform=get_original_pipeline_transform(args.in_size))
+        testset_original = ImageNetInMemory(root_dir='/fs/ess/PAS1289/ImageNet/imagenet/val', transform=get_original_pipeline_transform(args.in_size))
         if (not isfile("/fs/ess/PAS1289/ImageNet/imagenet_train_split_indices.pkl")) or (not isfile("/fs/ess/PAS1289/ImageNet/imagenet_test_split_indices.pkl")):
             def split_ImageNet1K_by_labels(dataset, num_splits=10):
                 split_indices = []
@@ -205,17 +176,12 @@ def main(args):
         for i in range(10):
             print(f"Split {i}: {len(test_split_indices[i])}")
         print()
-        
 
-        train_loaders = [DataLoader(Subset(trainset, indices), batch_size=args.batch_size, shuffle=True, num_workers=2, drop_last=True) 
+        train_loaders = [DataLoader(Subset(trainset, indices), batch_size=args.batch_size, shuffle=True, num_workers=4) 
                     for indices in train_split_indices]
-        train_loaders_original = [DataLoader(Subset(trainset_original, indices), batch_size=args.batch_size, shuffle=True, num_workers=2, drop_last=True) for indices in train_split_indices]
-        test_loaders = [DataLoader(Subset(testset_original, indices), batch_size=args.batch_size, shuffle=False, num_workers=2, drop_last=True) 
+        train_loaders_original = [DataLoader(Subset(trainset_original, indices), batch_size=args.batch_size, shuffle=True, num_workers=4) for indices in train_split_indices]
+        test_loaders = [DataLoader(Subset(testset_original, indices), batch_size=args.batch_size, shuffle=False, num_workers=4) 
                         for indices in test_split_indices]
-        
-        print(f"train_loaders: {train_loaders}")
-        print(f"type(train_loaders[0]): {type(train_loaders[0])}")
-        print(f"len(train_loaders[0].dataset): {len(train_loaders[0].dataset)}")
     else:
         print("Dataset Not Supported")
         exit()
@@ -272,16 +238,7 @@ def main(args):
 
             all_prev_dataset=ConcatDataset([train_loaders[i].dataset for i in range(task+1)])
             all_prev_trainloader=DataLoader(all_prev_dataset,batch_size=args.batch_size,shuffle=True,num_workers=2,pin_memory=True, drop_last=True)
-            # print(f"test: {type(all_prev_trainloader)}, {len(all_prev_trainloader.dataset)}")
-            # (img, label)=next(all_prev_trainloader)
-            # print(f"debug : {img}, {label}")
-            try:
-                iter(all_prev_trainloader).__next__()
-                print("Dataset iteration works!")
-            except NotImplementedError as e:
-                print("Iteration error:", e)
-            # for i, (img, label) in enumerate(all_prev_trainloader):
-            #     print(f"i, img, label; {i} {type(img)} {label}")
+
             optimizer = torch.optim.Adam(model.parameters(), args.lr, weight_decay=args.weight_decay)
             scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=len(all_prev_trainloader), eta_min=0, last_epoch=-1)
 
@@ -430,85 +387,12 @@ if __name__ == "__main__":
     main(args)
 
 
-# Always use pitzer
-# No need to use gaussian blur
-# Pretrained is much better
-# 'WO projection head' is super important
-# conda activate vv
-
-# python cifar100_KNN_simCLR.py --pretrained --epochs 50 --batch-size 500 --in-size 32 |&tee output/SimCLR_32_w_pretrained.txt
-# python cifar100_KNN_simCLR.py --pretrained --epochs 20 --batch-size 50 --in-size 224 |&tee output/SimCLR_224_w_pretrained.txt
-# python cifar100_KNN_simCLR.py --pretrained --epochs 200 --batch-size 500 --in-size 32 |&tee output/SimCLR_32_w_pretrained_200.txt
-# python cifar100_KNN_simCLR.py --epochs 50 --batch-size 500 --in-size 32 |&tee output/SimCLR_32_wo_pretrained.txt
-
-# Use different dist
-# python cifar100_KNN_simCLR.py --pretrained --epochs 50 --batch-size 500 --in-size 32 --distance angular |&tee output/SimCLR_32_w_angular.txt
-# python cifar100_KNN_simCLR.py --pretrained --epochs 50 --batch-size 500 --in-size 32 --distance dot |&tee output/SimCLR_32_wp_dot.txt
-
-# angular is slightly better than euclidean
-# python cifar100_KNN_simCLR.py --pretrained --epochs 200 --batch-size 500 --in-size 32 --distance angular |&tee output/SimCLR_32_w_angular_200.txt
-# python cifar100_KNN_simCLR.py --pretrained --epochs 150 --batch-size 50 --in-size 224 --distance angular |&tee output/SimCLR_224_w_angular_150.txt
-
-# python cifar100_KNN_simCLR.py --pretrained --epochs 50 --annoy 50 --batch-size 500 --in-size 32 --distance angular |&tee output/SimCLR_32_w_ang_50_annoy50.txt
-# python cifar100_KNN_simCLR.py --pretrained --epochs 50 --annoy 1000 --batch-size 500 --in-size 32 --distance angular |&tee output/SimCLR_32_w_ang_50_annoy1000.txt
-# python cifar100_KNN_simCLR.py --pretrained --epochs 1000 --annoy 2000 --batch-size 500 --in-size 32 --distance angular |&tee output/SimCLR_32_w_ang_1000_annoy2000.txt
-# Failed. Not much improvement -- No no, I think its good
-
-# python cifar100_KNN_simCLR.py --pretrained --epochs 50 --annoy 1000 --batch-size 500 --in-size 32 --distance angular --k 20 |&tee output/SimCLR_32_w_ang_50_annoy1000_k20.txt
-# python cifar100_KNN_simCLR.py --pretrained --epochs 50 --annoy 10000 --batch-size 500 --in-size 32 --distance angular |&tee output/SimCLR_32_w_ang_50_annoy10000.txt
-# python cifar100_KNN_simCLR.py --pretrained --epochs 50 --annoy 1000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_32_w_ang_50_annoy1000_k10.txt
-
-# python cifar100_KNN_simCLR.py --pretrained --epochs 200 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 20 |&tee output/SimCLR_32_w_ang_200_annoy10000_k20.txt
-# python cifar100_KNN_simCLR.py --pretrained --epochs 300 --annoy 10000 --batch-size 50 --in-size 224 --distance angular --k 20 |&tee output/SimCLR_224_w_ang_300_annoy10000_k20.txt
-
-# python cifar100_KNN_simCLR.py --epochs 300 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 20 |&tee output/SimCLR_32_wop_ang_300_annoy10000_k20.txt
-# python cifar100_KNN_simCLR.py --epochs 2000 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 20 |&tee output/SimCLR_32_wop_ang_2000_annoy10000_k20.txt
-# (4h 5min)
-
-# python cifar100_KNN_simCLR.py --epochs 5000 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 20 |&tee output/SimCLR_32_wop_ang_5000_annoy10000_k20.txt
-# python cifar100_KNN_simCLR.py --pretrained --epochs 5000 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 20 |&tee output/SimCLR_32_w_ang_5000_annoy10000_k20.txt
-
-
-# python cifar100_KNN_simCLR.py --pretrained --epochs 2000 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 20 |&tee output/SimCLR_32_w_ang_2000_annoy10000_k20.txt
-
-# python cifar100_KNN_simCLR.py --epochs 300 --annoy 50000 --batch-size 500 --in-size 32 --distance angular --k 20 |&tee output/SimCLR_32_wop_ang_300_annoy50000_k20.txt
-# python cifar100_KNN_simCLR.py --epochs 300 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 100 |&tee output/SimCLR_32_wop_ang_300_annoy10000_k100.txt
-# python cifar100_KNN_simCLR.py --epochs 300 --annoy 20000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_32_wop_ang_300_annoy20000_k10.txt
-
-
-# python cifar100_KNN_simCLR.py --epochs 3000 --annoy 20000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_32_wop_ang_3000_annoy20000_k10.txt
-
-
-
-
-
-
-
 
 
 # ImageNet
-# python cifar100_KNN_simCLR.py --dataset ImageNet --epochs 1 --annoy 1000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_ImageNet_32_wop_1_annoy1000_k10.txt
-# python cifar100_KNN_simCLR.py --dataset ImageNet --epochs 20 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_ImageNet_32_wop_20_annoy10000_k10.txt
-# python cifar100_KNN_simCLR.py --dataset ImageNet --epochs 300 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_ImageNet_32_wop_300_annoy10000_k10.txt
+# python cifar100_KNN_simCLR_RAM.py --dataset ImageNet --epochs 1 --annoy 1000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_ImageNet_RAM_32_wop_1_annoy1000_k10.txt
+# python cifar100_KNN_simCLR_RAM.py --dataset ImageNet --epochs 20 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_ImageNet_RAM_32_wop_20_annoy10000_k10.txt
+# python cifar100_KNN_simCLR_RAM.py --dataset ImageNet --epochs 300 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_ImageNet_RAM_32_wop_300_annoy10000_k10.txt
 
 
 
-
-# Modify in_size something -- no problem...
-# python cifar100_KNN_simCLR.py --pretrained --epochs 50 --annoy 1000 --batch-size 500 --in-size 32 --distance angular --k 20 |&tee output/SimCLR_32_w_ang_50_annoy1000_k20.txt
-# python cifar100_KNN_simCLR.py --pretrained --epochs 150 --batch-size 50 --in-size 224 --distance angular |&tee output/SimCLR_224_w_angular_150_2.txt
-
-
-
-# Further research
-# python cifar100_KNN_simCLR.py --epochs 50 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_32_wop_ang_50_annoy10000_k10.txt
-
-# python cifar100_KNN_simCLR.py --epochs 100 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_32_wop_ang_100_annoy10000_k10.txt
-# python cifar100_KNN_simCLR.py --epochs 150 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_32_wop_ang_150_annoy10000_k10.txt
-# python cifar100_KNN_simCLR.py --epochs 1000 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_32_wop_ang_1000_annoy10000_k10.txt
-# python cifar100_KNN_simCLR.py --epochs 1500 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_32_wop_ang_1500_annoy10000_k10.txt
-
-
-# For first train-loss
-# python cifar100_KNN_simCLR.py --epochs 10 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_32_wop_ang_10_forloss.txt
-# python cifar100_KNN_simCLR.py --epochs 3000 --annoy 10000 --batch-size 500 --in-size 32 --distance angular --k 10 |&tee output/SimCLR_32_wop_ang_3000_forloss.txt
